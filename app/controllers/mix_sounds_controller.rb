@@ -1,0 +1,2 @@
+class MixSoundsController < ApplicationController
+end
