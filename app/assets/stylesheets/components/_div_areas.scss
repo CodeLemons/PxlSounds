@@ -1,0 +1,38 @@
+.main-container {
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+  border: 2px solid red !important;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  border: 2px solid blue;
+  .card-container {
+
+    .mix-container {
+      height: 347px;
+      border: 2px solid blue;
+    }
+
+    .worlds-container {
+      height: 512px;
+      border: 2px solid blue;
+
+      .world-card {
+        height: 151px;
+        border: 2px solid yellow;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-right: 20px;
+      }
+    }
+  }
+  .image-container {
+    background-image: url('CyberCity.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 855px;
+  }
+
+}
