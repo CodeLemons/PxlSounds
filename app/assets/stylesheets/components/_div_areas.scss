@@ -7,11 +7,34 @@
   display: grid;
   grid-template-columns: 2fr 3fr;
   border: 2px solid blue;
+
   .card-container {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid blue;
 
     .mix-container {
+      display: flex;
+      flex-direction: column;
       height: 347px;
-      border: 2px solid blue;
+      width: 100%;
+      text-align: center;
+      justify-content: flex-end;
+
+      .title {
+        font-size: 30px;
+      }
+
+      .mix-cards {
+        border: 2px solid blue;
+        border: 2px solid blue;
+        vertical-align: bottom;
+        .mix-card {
+          height: 80px;
+          border: 2px solid yellow;
+          margin: 20px;
+        }
+      }
     }
 
     .worlds-container {
@@ -28,11 +51,19 @@
     }
   }
   .image-container {
-    background-image: url('CyberCity.gif');
+    // background-image: url('CyberCity.gif');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 855px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .mix-overlay {
+      height: 150px;
+      border: 2px solid yellow;
+    }
   }
 
 }
