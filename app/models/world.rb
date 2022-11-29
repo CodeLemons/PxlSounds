@@ -1,6 +1,4 @@
 class World < ApplicationRecord
-  belongs_to :users
-
   has_many :sounds
   has_many :mixes
   has_many :mix_sounds, through: :mixes
