@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :worlds, only: %i[index show] do
     resources :mixes, only: %i[new create]
     resources :mix_sounds, only: %i[create new]
+    get '/play', to: 'worlds#play'
   end
 
   resources :mixes, only: %i[destroy edit update]
