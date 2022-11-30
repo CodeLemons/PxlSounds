@@ -1,3 +1,7 @@
+cloudinary:
+  service: Cloudinary
+  folder: PxlSounds
+
 test:
   service: Disk
   root: <%= Rails.root.join("tmp/storage") %>
