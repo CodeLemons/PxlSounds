@@ -1,6 +1,7 @@
 [
   {
     "world_name": "City",
+    "bgm": "",
     "sounds": [
         {
         "name": "rain",
@@ -40,7 +41,7 @@
 
       {
         "name": "spaceship",
-        "file_url": "rain-pavement.flac",
+        "file_url": "spaceships.wav",
         "width": 450,
         "height": 114,
         "left": 531,
@@ -51,51 +52,120 @@
   },
 
   {
-    "world_name": "Cosy Room",
+    "world_name": "Castle",
     "sounds": [
         {
-        "name": "rain",
-        "file_url": "rain-pavement.flac",
-        "width": 754,
-        "height": 156,
-        "left": 322,
-        "top": 12
+        "name": "howling wind",
+        "file_url": "howling-wind.wav",
+        "width": 1219,
+        "height": 422,
+        "left": 293,
+        "top": 0
       },
 
       {
-        "name": "neon",
-        "file_url": "rain-pavement.flac",
-        "width": 196,
-        "height": 110,
-        "left": 78,
-        "top": 101
+        "name": "church bells",
+        "file_url": "church-bells.wav",
+        "width": 270,
+        "height": 747,
+        "left": 0,
+        "top": 0
       },
 
       {
-        "name": "keyboard",
-        "file_url": "rain-pavement.flac",
-        "width": 263,
-        "height": 285,
-        "left": 78,
-        "top": 503
+        "name": "grass-1",
+        "file_url": "grass-wind.m4a",
+        "width": 212,
+        "height": 92,
+        "left": 251,
+        "top": 781
       },
 
       {
-        "name": "sirens",
-        "file_url": "rain-pavement.flac",
-        "width": 721,
-        "height": 114,
-        "left": 371,
-        "top": 596
+        "name": "grass-2",
+        "file_url": "grass-wind.m4a",
+        "width": 277,
+        "height": 218,
+        "left": 717,
+        "top": 764
       },
 
       {
-        "name": "spaceship",
-        "file_url": "rain-pavement.flac",
-        "width": 450,
-        "height": 114,
-        "left": 531,
-        "top": 868
+        "name": "waves",
+        "file_url": "crashing-waves.wav",
+        "width": 334,
+        "height": 132,
+        "left": 1098,
+        "top": 615
+      },
+
+      {
+        "name": "campfire",
+        "file_url": "campfire.mp3",
+        "width": 218,
+        "height": 276,
+        "left": 477,
+        "top": 672
+      }
+      ]
+
+  },
+
+  {
+    "world_name": "Cosy Room",
+    "sounds": [
+      {
+        "name": "rain-window-1",
+        "file_url": "rain-window.wav",
+        "width": 831,
+        "height": 532,
+        "left": 2,
+        "top": 90
+      },
+
+      {
+        "name": "rain-window-2",
+        "file_url": "rain-window.wav",
+        "width": 290,
+        "height": 250,
+        "left": 833,
+        "top": 90
+      },
+
+      {
+        "name": "arcade game",
+        "file_url": "arcade-game.wav",
+        "width": 231,
+        "height": 272,
+        "left": 150,
+        "top": 632
+      },
+
+      {
+        "name": "coffee sip",
+        "file_url": "coffee-sipping.wav",
+        "width": 168,
+        "height": 176,
+        "left": 1333,
+        "top": 728
+      },
+
+      {
+        "name": "lamp",
+        "file_url": "lamp.flac",
+        "width": 268,
+        "height": 250,
+        "left": 1134,
+        "top": 90
+      },
+
+      {
+        "name": "page turn",
+        "file_url": "page-turn.wav",
+        "width": 268,
+        "height": 165,
+        "left": 622,
+        "top": 646
       }
       ]
 
