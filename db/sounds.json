@@ -2,6 +2,8 @@
   {
     "world_name": "City",
     "bgm": "",
+    "image": "CyberCity.gif",
+    "description": "Millions of people live in the city, which has large streets and dense urban towers. The city is regarded as a fascinating and exciting destination to visit, an engaging and lively place to live for those with money, and a hellscape for the city's dispossessed.",
     "sounds": [
         {
         "name": "rain",
@@ -53,6 +55,9 @@
 
   {
     "world_name": "Castle",
+    "bgm": "firelink-bgm.mp3",
+    "image": "Castle.gif",
+    "description": "It is difficult to say when exactly it was built, but what is known for sure is that, it existed long before humans. Steepled buildings and partially covered by snow the castle towers over the land below and at its centre, a great cathedral lies, dedicated to the Darkmoon. An eternal moon hangs above, never fading.",
     "sounds": [
         {
         "name": "howling wind",
@@ -113,6 +118,9 @@
 
   {
     "world_name": "Cosy Room",
+    "bgm":"",
+    "image": "LofiGirl.gif",
+    "description": "A room filled with warmth,  A place where people can escape, protected from the unpredictable and harsh outside world.",
     "sounds": [
       {
         "name": "rain-window-1",

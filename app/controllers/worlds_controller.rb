@@ -4,7 +4,7 @@ class WorldsController < ApplicationController
   end
 
   def index
-    @world = World.all
+    @worlds = World.all
   end
 
   def play
