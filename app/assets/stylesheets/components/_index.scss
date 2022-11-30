@@ -6,8 +6,16 @@
 @import "div_areas";
 @import "responsivness";
 @import "signup";
+@import "./node_modules/nes.css/css/nes.css";
+@import "border";
 
 body {
-  background-color: #1E1E1E;
-  color: white;
+  background-color: #1E1E1E !important;
+  color: white !important;
+  font-family: 'Press Start 2P';
+}
+
+h1, h2, h3 {
+  font-family: 'Press Start 2P';
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
 }
