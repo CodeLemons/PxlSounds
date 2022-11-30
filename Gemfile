@@ -78,4 +78,4 @@ group :test do
 end
 
 # Cloudinary
-gem "dotenv-rails", groups: [:development, :test]
+gem "cloudinary"
