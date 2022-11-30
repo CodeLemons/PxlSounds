@@ -548,11 +548,6 @@ neo-async@^2.6.2:
   resolved "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-nes.css@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/nes.css/-/nes.css-2.3.0.tgz#112c834dd8a18cda570ab76d66b26b078a94c919"
-  integrity sha512-lCFZs9vj3f5RVdbvTL/kSxiYsOARwSeAdJaMNo+bCgmWOO9x8ay7QpT4yQVKHy3r5Dttzd0uqVdpt3fvvx6EpQ==
-
 node-releases@^2.0.6:
   version "2.0.6"
   resolved "https://registry.npmjs.org/node-releases/-/node-releases-2.0.6.tgz"
