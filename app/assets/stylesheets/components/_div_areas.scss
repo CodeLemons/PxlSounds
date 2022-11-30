@@ -1,11 +1,10 @@
 .main-container {
   margin-left: 20px !important;
   margin-right: 20px !important;
-  height: 92vh;
+  height: 89vh;
 }
 
 .play-container {
-  border: 2px solid red !important;
   height: 100vh;
 }
 
@@ -21,10 +20,10 @@
     .mix-container {
       display: flex;
       flex-direction: column;
-      // height: 347px;
       width: 100%;
       text-align: center;
       justify-content: flex-end;
+      align-items: center;
 
       .title {
         font-size: 30px;
@@ -32,11 +31,15 @@
 
       .mix-cards {
         vertical-align: bottom;
+        width: 100%;
+
         .mix-card {
-          // height: 80px;
           border: 2px solid yellow;
           margin: 20px;
           margin-right: 40px;
+          h1 {
+            font-size: 20px;
+          }
         }
       }
     }
@@ -55,9 +58,7 @@
         margin-top: 20px;
         margin-right: 20px;
         border: 2px solid #080708;
-        h1 {
-          text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
-        }
+        border-radius: 20px;
       }
     }
   }
@@ -71,10 +72,23 @@
     flex-direction: column;
     justify-content: flex-end;
     border: 2px solid #080708;
+    border-radius: 20px;
+
     .mix-overlay {
+      display: flex;
       background: rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(5px);
       height: 125px;
+      border-radius: 0px 0px 20px 20px;
+
+      .mix-image {
+        width: 25%;
+        height: 100%;
+      }
+
+      .mix-content {
+        padding-top: 20px;
+      }
     }
   }
 
