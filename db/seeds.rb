@@ -6,32 +6,37 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-json file reading here!
+require "json"
 
+# parsing json file
+filepath = "db/sounds.json"
+worlds = JSON.parse(File.read(filepath))
+p worlds
 
 puts "Cleaning database"
 World.destroy_all
 puts "Database cleaned"
 
-
-puts "Creating a world"
-world = World.create(
-  name: "Castle",
-  description: "TODO",
-  image: "Castle.gif"
-)
-puts "#{world.name} created"
-
-puts "Creating sounds for #{world.name}"
-5.times do |index|
-  sound = Sound.create(
-    name: string
-    path: string name of file stored in assets
-    world_id: world.id
-    start_x: json file
-    start_y: json file
-    height: json file
-    width: json file
+worlds.each do |w|
+  puts "Creating a world"
+  world = World.create(
+    name: w["world_name"],
+    description: "TODO",
+    image: "Castle.gif"
   )
-  puts "#{sound.name} created"
+  puts "#{world.name} created"
+
+  puts "Creating sounds for #{world.name}"
+  w["sounds"].each do |s|
+    sound = Sound.create(
+      name: s["name"],
+      path: s["file_url"],
+      world_id: world.id,
+      start_x: s["left"],
+      start_y: s["top"],
+      height: s["height"],
+      width: s["width"]
+    )
+    puts "#{sound.name} created"
+  end
 end
