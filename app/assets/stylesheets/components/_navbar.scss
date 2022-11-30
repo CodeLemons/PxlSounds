@@ -6,9 +6,26 @@
   margin-left: 20px;
   margin-right: 20px;
   height: 80px;
-  p {
-    font-size: 30px;
-    margin: 0px;
+
+  .navbar-drop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      font-size: 30px;
+      margin-right: 0px;
+    }
+
+    a {
+      margin-right: 10px;
+    }
+
+    img {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+    }
   }
 }
 
