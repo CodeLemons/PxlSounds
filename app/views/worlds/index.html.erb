@@ -2,8 +2,9 @@
   <div class="wrapper">
     <div class="card-container">
       <div class="mix-container">
-        <div class="mix-cards">
+        <div class="cards-border"></div>
           <h1>My Mixes</h1>
+        <div class="mix-cards">
           <div class="mix-card">
             <h1>hello</h1>
           </div>
@@ -11,17 +12,14 @@
             <h1>hello</h1>
           </div>
         </div>
+        <div class="cards-border"></div>
       </div>
       <div class="worlds-container">
-        <div class="world-card">
-          <h1>Cosy Room</h1>
-        </div>
-        <div class="world-card">
-          <h1>hello</h1>
-        </div>
-        <div class="world-card">
-          <h1>hello</h1>
-        </div>
+        <% @worlds.each do |world| %>
+          <div class="world-card" style="background-image: url('<%= asset_path(world.image) %>');">
+            <h1><%= world.name %></h1>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class="image-container">
