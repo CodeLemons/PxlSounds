@@ -1,0 +1,102 @@
+[
+  {
+    "world_name": "City",
+    "sounds": [
+        {
+        "name": "rain",
+        "file_url": "rain-pavement.flac",
+        "width": 754,
+        "height": 156,
+        "left": 322,
+        "top": 12
+      },
+
+      {
+        "name": "neon-sign",
+        "file_url": "neon-sign.flac",
+        "width": 196,
+        "height": 110,
+        "left": 78,
+        "top": 101
+      },
+
+      {
+        "name": "keyboard",
+        "file_url": "keyboard.wav",
+        "width": 263,
+        "height": 285,
+        "left": 78,
+        "top": 503
+      },
+
+      {
+        "name": "sirens",
+        "file_url": "sirens.wav",
+        "width": 721,
+        "height": 114,
+        "left": 371,
+        "top": 596
+      },
+
+      {
+        "name": "spaceship",
+        "file_url": "rain-pavement.flac",
+        "width": 450,
+        "height": 114,
+        "left": 531,
+        "top": 868
+      }
+      ]
+
+  },
+
+  {
+    "world_name": "Cosy Room",
+    "sounds": [
+        {
+        "name": "rain",
+        "file_url": "rain-pavement.flac",
+        "width": 754,
+        "height": 156,
+        "left": 322,
+        "top": 12
+      },
+
+      {
+        "name": "neon",
+        "file_url": "rain-pavement.flac",
+        "width": 196,
+        "height": 110,
+        "left": 78,
+        "top": 101
+      },
+
+      {
+        "name": "keyboard",
+        "file_url": "rain-pavement.flac",
+        "width": 263,
+        "height": 285,
+        "left": 78,
+        "top": 503
+      },
+
+      {
+        "name": "sirens",
+        "file_url": "rain-pavement.flac",
+        "width": 721,
+        "height": 114,
+        "left": 371,
+        "top": 596
+      },
+
+      {
+        "name": "spaceship",
+        "file_url": "rain-pavement.flac",
+        "width": 450,
+        "height": 114,
+        "left": 531,
+        "top": 868
+      }
+      ]
+
+  }]

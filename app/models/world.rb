@@ -1,6 +1,6 @@
 class World < ApplicationRecord
-  has_many :sounds
-  has_many :mixes
+  has_many :sounds, dependent: :destroy
+  has_many :mixes, dependent: :destroy
   has_many :mix_sounds, through: :mixes
 
   validates :name, presence: true

@@ -2,21 +2,29 @@
   margin-left: 20px !important;
   margin-right: 20px !important;
   border: 2px solid red !important;
+  height: 93vh;
 }
+
+.play-container {
+  border: 2px solid red !important;
+  height: 100vh;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: 2fr 3fr;
   border: 2px solid blue;
-
+  height: 100%;
   .card-container {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     border: 2px solid blue;
 
     .mix-container {
       display: flex;
       flex-direction: column;
-      height: 347px;
+      // height: 347px;
       width: 100%;
       text-align: center;
       justify-content: flex-end;
@@ -30,7 +38,7 @@
         border: 2px solid blue;
         vertical-align: bottom;
         .mix-card {
-          height: 80px;
+          // height: 80px;
           border: 2px solid yellow;
           margin: 20px;
         }
@@ -38,11 +46,12 @@
     }
 
     .worlds-container {
-      height: 512px;
+      // height: 512px;
       border: 2px solid blue;
 
       .world-card {
-        height: 151px;
+        text-align: center;
+        // height: 151px;
         border: 2px solid yellow;
         margin-top: 20px;
         margin-bottom: 20px;
@@ -51,17 +60,17 @@
     }
   }
   .image-container {
-    // background-image: url('CyberCity.gif');
+    background-image: url('CyberCity.gif');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 855px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 
     .mix-overlay {
-      height: 150px;
+      // height: 150px;
       border: 2px solid yellow;
     }
   }
