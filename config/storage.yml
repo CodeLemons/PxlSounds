@@ -1,6 +1,6 @@
 cloudinary:
   service: Cloudinary
-  folder: <%= Rails.env %>
+  folder: PxlSounds
 
 test:
   service: Disk
