@@ -20,8 +20,8 @@ worlds.each do |w|
   puts "Creating a world"
   world = World.create(
     name: w["world_name"],
-    description: "TODO",
-    image: "Castle.gif"
+    description: w["description"],
+    image: w["image"]
   )
   puts "#{world.name} created"
 
