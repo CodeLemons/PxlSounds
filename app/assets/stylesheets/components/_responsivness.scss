@@ -1,90 +1,90 @@
-@media screen and (max-width: 1366px) {
-  .navbar {
-    display: flex;
-    border: solid red;
-    justify-content: space-between;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    margin-left: 20px;
-    margin-right: 20px;
-    height: 37px;
+// @media screen and (max-width: 1366px) {
+//   .navbar {
+//     display: flex;
+//     border: solid red;
+//     justify-content: space-between;
+//     padding-top: 0px;
+//     padding-bottom: 0px;
+//     margin-left: 20px;
+//     margin-right: 20px;
+//     height: 37px;
 
-    p {
-      font-size: 25px;
-      margin: 0px;
-    }
-  }
+//     p {
+//       font-size: 25px;
+//       margin: 0px;
+//     }
+//   }
 
-  .wrapper {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    border: 2px solid blue;
+//   .wrapper {
+//     display: grid;
+//     grid-template-columns: 2fr 3fr;
+//     border: 2px solid blue;
 
-    .card-container {
-      display: flex;
-      flex-direction: column;
-      border: 2px solid blue;
+//     .card-container {
+//       display: flex;
+//       flex-direction: column;
+//       border: 2px solid blue;
 
-      .mix-container {
-        display: flex;
-        flex-direction: column;
-        height: 286px;
-        width: 100%;
-        text-align: center;
-        justify-content: flex-end;
+//       .mix-container {
+//         display: flex;
+//         flex-direction: column;
+//         height: 286px;
+//         width: 100%;
+//         text-align: center;
+//         justify-content: flex-end;
 
-        .title {
-          font-size: 25px;
-        }
+//         .title {
+//           font-size: 25px;
+//         }
 
-        .mix-cards {
-          border: 2px solid blue;
-          border: 2px solid blue;
-          vertical-align: bottom;
-          .mix-card {
-            height: 80px;
-            border: 2px solid yellow;
-            margin: 20px;
-          }
-        }
-      }
+//         .mix-cards {
+//           border: 2px solid blue;
+//           border: 2px solid blue;
+//           vertical-align: bottom;
+//           .mix-card {
+//             height: 80px;
+//             border: 2px solid yellow;
+//             margin: 20px;
+//           }
+//         }
+//       }
 
-      .worlds-container {
-        height: 300px;
-        border: 2px solid blue;
+//       .worlds-container {
+//         height: 300px;
+//         border: 2px solid blue;
 
-        .world-card {
-          height: 76px;
-          border: 2px solid yellow;
-          margin-top: 20px;
-          margin-bottom: 20px;
-          margin-right: 20px;
-        }
-      }
-    }
-    .image-container {
-      // background-image: url('CyberCity.gif');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      height: 590px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+//         .world-card {
+//           height: 76px;
+//           border: 2px solid yellow;
+//           margin-top: 20px;
+//           margin-bottom: 20px;
+//           margin-right: 20px;
+//         }
+//       }
+//     }
+//     .image-container {
+//       // background-image: url('CyberCity.gif');
+//       background-repeat: no-repeat;
+//       background-size: cover;
+//       background-position: center;
+//       height: 590px;
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: flex-end;
 
-      .mix-overlay {
-        height: 150px;
-        border: 2px solid yellow;
-      }
-    }
+//       .mix-overlay {
+//         height: 150px;
+//         border: 2px solid yellow;
+//       }
+//     }
 
-  }
+//   }
 
-  .world-content {
-    border: solid blue;
-    margin: auto;
-    height: 200px;
-    width: 500px;
-  }
+//   .world-content {
+//     border: solid blue;
+//     margin: auto;
+//     height: 200px;
+//     width: 500px;
+//   }
 
-}
+// }
