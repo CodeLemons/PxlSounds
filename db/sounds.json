@@ -5,7 +5,7 @@
     "sounds": [
         {
         "name": "rain",
-        "file_url": "rain-pavement.flac",
+        "file_url": "rain-pavement.mp3",
         "width": 754,
         "height": 156,
         "left": 322,
@@ -14,7 +14,7 @@
 
       {
         "name": "neon-sign",
-        "file_url": "neon-sign.flac",
+        "file_url": "neon-sign.mp3",
         "width": 196,
         "height": 110,
         "left": 78,
@@ -23,7 +23,7 @@
 
       {
         "name": "keyboard",
-        "file_url": "keyboard.wav",
+        "file_url": "keyboard.mp3",
         "width": 263,
         "height": 285,
         "left": 78,
@@ -32,7 +32,7 @@
 
       {
         "name": "sirens",
-        "file_url": "sirens.wav",
+        "file_url": "sirens.mp3",
         "width": 721,
         "height": 114,
         "left": 371,
@@ -41,7 +41,7 @@
 
       {
         "name": "spaceship",
-        "file_url": "spaceships.wav",
+        "file_url": "spaceships.mp3",
         "width": 450,
         "height": 114,
         "left": 531,
@@ -56,7 +56,7 @@
     "sounds": [
         {
         "name": "howling wind",
-        "file_url": "howling-wind.wav",
+        "file_url": "howling-wind.mp3",
         "width": 1219,
         "height": 422,
         "left": 293,
@@ -65,7 +65,7 @@
 
       {
         "name": "church bells",
-        "file_url": "church-bells.wav",
+        "file_url": "church-bells.mp3",
         "width": 270,
         "height": 747,
         "left": 0,
@@ -74,7 +74,7 @@
 
       {
         "name": "grass-1",
-        "file_url": "grass-wind.m4a",
+        "file_url": "grass-wind.mp3",
         "width": 212,
         "height": 92,
         "left": 251,
@@ -83,7 +83,7 @@
 
       {
         "name": "grass-2",
-        "file_url": "grass-wind.m4a",
+        "file_url": "grass-wind.mp3",
         "width": 277,
         "height": 218,
         "left": 717,
@@ -92,7 +92,7 @@
 
       {
         "name": "waves",
-        "file_url": "crashing-waves.wav",
+        "file_url": "crashing-waves.mp3",
         "width": 334,
         "height": 132,
         "left": 1098,
@@ -116,7 +116,7 @@
     "sounds": [
       {
         "name": "rain-window-1",
-        "file_url": "rain-window.wav",
+        "file_url": "rain-window.mp3",
         "width": 831,
         "height": 532,
         "left": 2,
@@ -125,7 +125,7 @@
 
       {
         "name": "rain-window-2",
-        "file_url": "rain-window.wav",
+        "file_url": "rain-window.mp3",
         "width": 290,
         "height": 250,
         "left": 833,
@@ -134,7 +134,7 @@
 
       {
         "name": "arcade game",
-        "file_url": "arcade-game.wav",
+        "file_url": "arcade-game.mp3",
         "width": 231,
         "height": 272,
         "left": 150,
@@ -143,7 +143,7 @@
 
       {
         "name": "coffee sip",
-        "file_url": "coffee-sipping.wav",
+        "file_url": "coffee-sipping.mp3",
         "width": 168,
         "height": 176,
         "left": 1333,
@@ -152,7 +152,7 @@
 
       {
         "name": "lamp",
-        "file_url": "lamp.flac",
+        "file_url": "lamp.mp3",
         "width": 268,
         "height": 250,
         "left": 1134,
@@ -161,7 +161,7 @@
 
       {
         "name": "page turn",
-        "file_url": "page-turn.wav",
+        "file_url": "page-turn.mp3",
         "width": 268,
         "height": 165,
         "left": 622,
