@@ -11,7 +11,6 @@ require "json"
 # parsing json file
 filepath = "db/sounds.json"
 worlds = JSON.parse(File.read(filepath))
-p worlds
 
 puts "Cleaning database"
 World.destroy_all
