@@ -13,27 +13,30 @@ export default class extends Controller {
 
   toggleSound(e) {
     console.log(e.target.dataset.soundFile);
-    this.#getSoundFiles();
+    // this.#getSoundFiles();
     let sfx = new Howl({
-      src: [e.target.dataset.soundFile],
+      src: this.#getSoundFiles(),
       // loop: true,
       onend: function() {
-        console.log("finished");
+        console.log("Stopped");
       }
     })
     // sfx.playing() ? sfx.stop() : sfx.once('load', function(){ sfx.play(); });
-    if (sfx != null) {
-      sfx.pause();
+    if (sfx == null) {
+      sfx.play();
     } else {
-      sfx.once('load', function(){ sfx.play(); });
-      console.log("PAUSING");
+      // sfx.once('load', function(){ sfx.play(); });
+      sfx.stop();
+      // console.log("PAUSING");
     }
+    console.log(this.#getSoundFiles());
+    sfx.play();
   }
 
   #getSoundFiles() {
     const array = [];
     this.soundTargets.forEach((element) => {
-      array.push(element.dataset.soundFile);
+      array.push(`${element.dataset.soundFile}.mp3`);
     });
 
     console.log(array);

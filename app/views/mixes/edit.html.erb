@@ -1,9 +1,10 @@
 <div class="play-container" data-controller="play" style="position: relative;">
+  <%= cl_image_tag @world.image.key, class: "src" %>
   <% @world.sounds.each do |sound| %>
     <div data-play-target="sound"
-        style="position: absolute; width: <%= sound.width %>px; height: <%= sound.height %>px; background-color: blue; left: <%= sound.start_x %>px; top: <%= sound.start_y %>px"
+        style="position: absolute; width: <%= sound.width %>px; height: <%= sound.height %>px; left: <%= sound.start_x %>px; top: <%= sound.start_y %>px; border: solid white;"
         data-action="click->play#toggleSound"
-        data-sound-file="<%= cl_image_path( sound.audio.key )%>"
+        data-sound-file="<%= cl_video_path(sound.audio.key, resource_type: "video")%>"
         data-enabled="<%= @mix.sounds.include?(sound) ? "true" : "false" %>"></div>
   <% end %>
 </div>

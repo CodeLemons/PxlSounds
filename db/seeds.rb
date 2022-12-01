@@ -14,7 +14,7 @@ worlds = JSON.parse(File.read(filepath))
 
 puts "Cleaning World and Sound databases"
 World.destroy_all
-Sound.destroy.all
+Sound.destroy_all
 puts "Database cleaned"
 
 worlds.each do |w|
