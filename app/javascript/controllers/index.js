@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import PlayController from "./play_controller"
 application.register("play", PlayController)
+
+import SaveController from "./save_controller"
+application.register("save", SaveController)

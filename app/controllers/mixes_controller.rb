@@ -1,5 +1,5 @@
 class MixesController < ApplicationController
-  before_action :set_mix, only: [:edit]
+  before_action :set_mix, only: [:edit, :update]
   before_action :set_world, only: [:edit, :create, :new]
 
   def new
@@ -21,9 +21,9 @@ class MixesController < ApplicationController
   end
 
   def update
-    @mix.update(mixes_params)
+    @mix.update(mix_params)
 
-    redirect_to edit_world_mix_path(@world, @mix), notice: "Succesfully updated"
+    redirect_to edit_world_mix_path(@mix), notice: "Succesfully updated"
   end
 
   def destroy

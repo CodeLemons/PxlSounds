@@ -1,5 +1,13 @@
-.save-button {
+.big-save {
   position: absolute;
   left: 20px;
   top: 20px;
+}
+
+.save-button-gone {
+  display: none;
+}
+
+.hidden {
+  display: none;
 }
