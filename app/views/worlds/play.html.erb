@@ -1,9 +1,12 @@
 <div class="play-container" data-controller="play" style="position: relative;">
-  <h1>PXLSOUNDS</h1>
-  <div data-play-target="rain"
+  <div data-play-target="sound"
       style="position: absolute; width: 754px; height: 156px; background-color: red; left: 322px; top: 12px"
-      data-action="click->play#rain"></div>
-  <div data-play-target="guy"
+      data-action="click->play#toggleSound"
+      data-sound-file="<%= asset_path('/campfire.mp3') %>"
+      data-enabled="false"></div>
+  <div data-play-target="sound"
        style="position: absolute; width: 263px; height: 285px; background-color: blue; left: 78px; top: 503px"
-       data-action="click->play#guy"></div>
+       data-action="click->play#toggleSound"
+       data-sound-file="https://res.cloudinary.com/dmdajbspi/video/upload/v1669829024/church-bells_c1ofti.mp3"
+       data-enabled="false"></div>
 </div>
