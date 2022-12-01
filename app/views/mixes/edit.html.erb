@@ -11,11 +11,7 @@
        data-enabled="false"></div>
 </div>
 
-<button class="save-button">
-  save
-</button>
-
-  <%= simple_form_for [@world, @mix] do |f| %>
+ <%= simple_form_for [@mix] do |f| %>
     <div>
       <%= f.input :name %>
     </div>
