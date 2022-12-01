@@ -592,6 +592,11 @@ picocolors@^1.0.0:
   resolved "https://registry.npmjs.org/picocolors/-/picocolors-1.0.0.tgz"
   integrity sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==
 
+pixel-borders@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/pixel-borders/-/pixel-borders-1.1.4.tgz#5bcea9a6734384fde36683aa481fa625c471164d"
+  integrity sha512-jBX9MMRsCeYNl1sHnXnAgtBD5hLAMa59/MDvVBZUoeHtsF6t97goigzIPQHvssh8xsQ5w+vF7hqabutbpb0zxA==
+
 pkg-dir@^4.2.0:
   version "4.2.0"
   resolved "https://registry.npmjs.org/pkg-dir/-/pkg-dir-4.2.0.tgz"
