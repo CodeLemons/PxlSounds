@@ -1,6 +1,7 @@
 class Sound < ApplicationRecord
   belongs_to :world
 
+  has_one_attached :audio
   has_many :mix_sounds
 
   validates :name, presence: true
