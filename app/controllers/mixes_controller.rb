@@ -9,8 +9,9 @@ class MixesController < ApplicationController
   def create
     @mix = Mix.new(mix_params)
     @mix.world = @world
+    @mix.user = current_user
     if @mix.save
-      redirect_to edit_world_mix_path(@mix), notice: "Succesfully created"
+      redirect_to edit_world_mix_path(@world, @mix), notice: "Succesfully created"
     else
       render 'new', status: :unprocessable_entity
     end
@@ -22,7 +23,7 @@ class MixesController < ApplicationController
   def update
     @mix.update(mixes_params)
 
-    redirect_to edit_world_mix_path(@mix), notice: "Succesfully updated"
+    redirect_to edit_world_mix_path(@world, @mix), notice: "Succesfully updated"
   end
 
   def destroy
@@ -34,7 +35,7 @@ class MixesController < ApplicationController
   private
 
   def mix_params
-    params.require(:mix).permit(:name, sounds: [])
+    params.require(:mix).permit(:name, sound: [])
   end
 
   def set_mix
