@@ -18,6 +18,7 @@ class MixesController < ApplicationController
   end
 
   def edit
+    @mix_sound = MixSound.new
   end
 
   def update

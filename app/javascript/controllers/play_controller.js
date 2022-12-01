@@ -8,11 +8,21 @@ import {Howl} from 'howler';
 export default class extends Controller {
   static targets = ["sound"]
   connect() {
-    console.log("Hello from play area");
+    this.#getSoundFiles().forEach((sound) => {
+      let sfx = new Howl({
+        src: sound.file,
+        volume: sound.volume,
+        onend: function() {
+          console.log("Stopped");
+        }
+      })
+      sfx.play();
+    });
+
   }
 
   toggleSound(e) {
-    console.log(e.target.dataset.soundFile);
+    // console.log(e.target.dataset.soundFile);
     // this.#getSoundFiles();
     let sfx = new Howl({
       src: this.#getSoundFiles(),
@@ -21,25 +31,19 @@ export default class extends Controller {
         console.log("Stopped");
       }
     })
-    // sfx.playing() ? sfx.stop() : sfx.once('load', function(){ sfx.play(); });
-    if (sfx == null) {
-      sfx.play();
-    } else {
-      // sfx.once('load', function(){ sfx.play(); });
-      sfx.stop();
-      // console.log("PAUSING");
-    }
-    console.log(this.#getSoundFiles());
-    sfx.play();
+
   }
 
   #getSoundFiles() {
     const array = [];
     this.soundTargets.forEach((element) => {
-      array.push(`${element.dataset.soundFile}.mp3`);
+      if (element.dataset.enabled == "true") {
+        array.push({file: `${element.dataset.soundFile}.mp3`,
+                    volume: element.dataset.volume / 10});
+      }
     });
 
     console.log(array);
-    return array
+    return array;
   }
 }
