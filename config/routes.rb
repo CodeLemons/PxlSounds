@@ -6,12 +6,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :worlds, only: %i[index show] do
-    resources :mixes, only: %i[create]
+    resources :mixes, only: %i[new create edit], path_names: { new: 'play', edit: 'play' }
     resources :mix_sounds, only: %i[create new]
-    member do
-      get '/play', to: 'mixes#new'
-      get '/play/:mix_id', to: 'mixes#edit'
-    end
   end
 
   resources :mixes, only: %i[destroy update]

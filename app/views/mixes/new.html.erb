@@ -10,3 +10,12 @@
        data-sound-file="https://res.cloudinary.com/dmdajbspi/video/upload/v1669829024/church-bells_c1ofti.mp3"
        data-enabled="false"></div>
 </div>
+
+  <%= simple_form_for [@world, @mix] do |f| %>
+    <div>
+      <%= f.input :name %>
+    </div>
+    <div>
+      <%= f.button :submit %>
+    </div>
+  <% end %>
