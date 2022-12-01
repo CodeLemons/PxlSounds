@@ -106,12 +106,22 @@
   color: white;
   margin: auto;
   height: 200px;
-  width: 500px;
-  padding-top: 150px;
+  width: 800px;
+  padding-top: 50px;
+  text-align: center;
+
+  h1 {
+    font-size: 60px;
+  }
+
+  p {
+    text-align: justify;
+    margin-top: 50px;
+  }
 }
 
 .show-container {
-  img {
+  .src {
     position: absolute;
     height: 100vh;
     width: 100%;
