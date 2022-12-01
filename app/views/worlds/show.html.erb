@@ -2,8 +2,7 @@
   <img src=<%= asset_path(@world.image) %> alt="" class="src">
       <%= render "shared/navbar" %>
   <div class="world-content" >
-      <%= @world.name%>
-      <br>
-      <%= @world.description%>
+      <h1><%= @world.name%></h1>
+      <p><%= @world.description%></p>
   </div>
 </div>
