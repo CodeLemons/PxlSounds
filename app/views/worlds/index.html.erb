@@ -5,13 +5,20 @@
       <div class="mix-container">
           <h3>My Mixes</h3>
         <div class="cards-border"></div>
-        <div class="mix-cards">
-          <div class="mix-card">
-            <p>hello</p>
-          </div>
-          <div class="mix-card">
-            <p>hello</p>
-          </div>
+        <div class="mix-cards" style="overflow-y: scroll; height: 260px;">
+          <% @mixes.each do |mix| %>
+            <div class="mix-card">
+              <div class="mix-name">
+                <%= link_to mix.name, edit_world_mix_path(mix.world, mix) %>
+              </div>
+              <div class="world-name">
+                <p><%= mix.world.name %></p>
+              </div>
+              <div class="play-button">
+                <i class="fa-solid fa-circle-play"></i>
+              </div>
+            </div>
+          <% end %>
         </div>
         <div class="cards-border"></div>
       </div>
@@ -25,6 +32,17 @@
         <% end %>
       </div>
     </div>
-    <%= render 'shared/mix' %>
+    <div class="image-container" >
+      <%# <% cl_image_tag @mixes.each do |mix| %>
+        <%# <%= mix.world.image.key, class: "src" %>
+      <%# <% end %>
+      <div class="mix-overlay">
+        <div class="mix-image">
+        </div>
+        <div class="mix-content">
+          <p>hello</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

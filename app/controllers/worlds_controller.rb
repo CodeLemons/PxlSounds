@@ -5,6 +5,7 @@ class WorldsController < ApplicationController
 
   def index
     @worlds = World.all
+    @mixes = current_user.mixes
   end
 
   def play
