@@ -1,4 +1,9 @@
-
-<div class="world-content nes-container is-rounded">
-
+<div class="show-container">
+  <img src=<%= asset_path(@world.image) %> alt="" class="src">
+      <%= render "shared/navbar" %>
+  <div class="world-content" >
+      <%= @world.name%>
+      <br>
+      <%= @world.description%>
+  </div>
 </div>
