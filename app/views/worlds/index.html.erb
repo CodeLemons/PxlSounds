@@ -17,7 +17,7 @@
       </div>
       <div class="worlds-container">
         <% @worlds.each do |world| %>
-          <div class="world-card" style="background-image: url('<%= asset_path(world.image) %>');">
+          <div class="world-card" style="background-image: url('<%= cl_image_path world.image.key %>')">
             <h1><%= world.name %></h1>
           </div>
         <% end %>
