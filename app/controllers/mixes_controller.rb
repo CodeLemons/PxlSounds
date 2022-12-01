@@ -35,7 +35,7 @@ class MixesController < ApplicationController
   private
 
   def mix_params
-    params.require(:mix).permit(:name, sound: [])
+    params.require(:mix).permit(:name, sounds: [])
   end
 
   def set_mix

@@ -1,14 +1,11 @@
 <div class="play-container" data-controller="play" style="position: relative;">
-  <div data-play-target="sound"
-      style="position: absolute; width: 754px; height: 156px; background-color: red; left: 322px; top: 12px"
-      data-action="click->play#toggleSound"
-      data-sound-file="<%= asset_path('/campfire.mp3') %>"
-      data-enabled="false"></div>
-  <div data-play-target="sound"
-       style="position: absolute; width: 263px; height: 285px; background-color: blue; left: 78px; top: 503px"
-       data-action="click->play#toggleSound"
-       data-sound-file="https://res.cloudinary.com/dmdajbspi/video/upload/v1669829024/church-bells_c1ofti.mp3"
-       data-enabled="false"></div>
+  <% @world.sounds.each do |sound| %>
+    <div data-play-target="sound"
+        style="position: absolute; width: <%= sound.width %>px; height: <%= sound.height %>px; background-color: blue; left: <%= sound.start_x %>px; top: <%= sound.start_y %>px"
+        data-action="click->play#toggleSound"
+        data-sound-file="<%= cl_image_path( sound.audio.key )%>"
+        data-enabled="<%= @mix.sounds.include?(sound) ? "true" : "false" %>"></div>
+  <% end %>
 </div>
 
  <%= simple_form_for [@mix] do |f| %>

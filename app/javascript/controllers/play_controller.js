@@ -9,10 +9,6 @@ export default class extends Controller {
   static targets = ["sound"]
   connect() {
     console.log("Hello from play area");
-  //   let sfx = new Howl({
-  //     src: []
-  // })
-
   }
 
   toggleSound(e) {
@@ -20,12 +16,18 @@ export default class extends Controller {
     this.#getSoundFiles();
     let sfx = new Howl({
       src: [e.target.dataset.soundFile],
-      loop: true,
+      // loop: true,
       onend: function() {
         console.log("finished");
       }
     })
-    sfx.playing() ? sfx.stop() : sfx.play();
+    // sfx.playing() ? sfx.stop() : sfx.once('load', function(){ sfx.play(); });
+    if (sfx != null) {
+      sfx.pause();
+    } else {
+      sfx.once('load', function(){ sfx.play(); });
+      console.log("PAUSING");
+    }
   }
 
   #getSoundFiles() {
