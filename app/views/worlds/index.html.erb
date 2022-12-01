@@ -17,9 +17,11 @@
       </div>
       <div class="worlds-container">
         <% @worlds.each do |world| %>
-          <div class="world-card" style="background-image: url('<%= cl_image_path world.image.key %>')">
-            <h1><%= world.name %></h1>
-          </div>
+          <%= link_to world_path(world) do %>
+            <div class="world-card" style="background-image: url('<%= cl_image_path( world.image.key ) %>');">
+              <h1><%= world.name %></h1>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
