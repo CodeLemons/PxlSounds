@@ -1,5 +1,6 @@
 <div class="show-container">
-  <img src=<%= asset_path(@world.image) %> alt="" class="src">
+
+  <%= cl_image_tag @world.image.key, class: "src" %>
       <%= render "shared/navbar" %>
   <div class="world-content" >
       <h1><%= @world.name%></h1>

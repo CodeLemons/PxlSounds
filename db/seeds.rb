@@ -12,8 +12,9 @@ require "json"
 filepath = "db/sounds.json"
 worlds = JSON.parse(File.read(filepath))
 
-puts "Cleaning database"
+puts "Cleaning World and Sound databases"
 World.destroy_all
+Sound.destroy.all
 puts "Database cleaned"
 
 worlds.each do |w|
@@ -24,6 +25,10 @@ worlds.each do |w|
   )
   image_file = File.open("app/assets/images/#{w["image"]}")
   world.image.attach(io: image_file, filename: w["image"], content_type: "image/gif")
+
+  bgm_file = File.open("app/assets/audios/bgm/#{w["bgm"]}")
+  world.bgm.attach(io: bgm_file, filename: w["bgm"])
+
   world.save!
   puts "#{world.name} created"
 
