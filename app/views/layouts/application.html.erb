@@ -11,12 +11,7 @@
   </head>
 
   <body>
-    <%# <% if params[:controller] == "worlds" && params[:action] == "play" %>
-      <%# <%= render "shared/flashes" %>
-    <%# <% else %>
-      <%# <%= render "shared/navbar" %>
-      <%# <%= render "shared/flashes" %>
-    <%# <% end %>
     <%= yield %>
+    <%= render "shared/flashes" %>
   </body>
 </html>
