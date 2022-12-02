@@ -5,5 +5,8 @@
   <div class="world-content" >
       <h1><%= @world.name%></h1>
       <p><%= @world.description%></p>
+      <%= link_to new_world_mix_path(@world) do %>
+        <button class="show-button">take a view</button>
+      <% end %>
   </div>
 </div>
