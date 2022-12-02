@@ -7,12 +7,49 @@ import {Howl} from 'howler';
 // Connects to data-controller="play"
 export default class extends Controller {
   static targets = ["sound"]
+  static values = {
+    cloud: String
+  }
   connect() {
-    console.log("Hello from play area");
+
+    // console.log(`${this.cloudValue}.mp3`);
+    // let bgm = new Howl({
+    //   src: `${this.cloudValue}.mp3`,
+    //   loop: true,
+    //   onend: function() {
+    //     console.log("Stopped bgm");
+    //   }
+    // })
+    // bgm.play()
+
+    // console.log(this.bgmTarget);
+
+    // console.log(`${this.cloudValue}.resume`);
+
+    this.#getSoundFiles().forEach((sound) => {
+      let sfx = new Howl({
+        src: sound.file,
+        volume: sound.volume,
+        loop: true,
+        onend: function() {
+          console.log("Stopped");
+        }
+      })
+      // let bgm = new Howl({
+      //   src: sound.bgm,
+      //   volume: 1,
+      //   onend: function() {
+      //     console.log("stopped bgm");
+      //   }
+      // })
+      // bgm.play();
+      sfx.play();
+    });
+
   }
 
   toggleSound(e) {
-    console.log(e.target.dataset.soundFile);
+    // console.log(e.target.dataset.soundFile);
     // this.#getSoundFiles();
     let sfx = new Howl({
       src: this.#getSoundFiles(),
@@ -21,25 +58,19 @@ export default class extends Controller {
         console.log("Stopped");
       }
     })
-    // sfx.playing() ? sfx.stop() : sfx.once('load', function(){ sfx.play(); });
-    if (sfx == null) {
-      sfx.play();
-    } else {
-      // sfx.once('load', function(){ sfx.play(); });
-      sfx.stop();
-      // console.log("PAUSING");
-    }
-    console.log(this.#getSoundFiles());
-    sfx.play();
+
   }
 
   #getSoundFiles() {
     const array = [];
     this.soundTargets.forEach((element) => {
-      array.push(`${element.dataset.soundFile}.mp3`);
+      if (element.dataset.enabled == "true") {
+        array.push({file: `${element.dataset.soundFile}.mp3`,
+                    volume: element.dataset.volume / 10});
+      }
     });
 
     console.log(array);
-    return array
+    return array;
   }
 }

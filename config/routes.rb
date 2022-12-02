@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :worlds, only: %i[index show] do
     resources :mixes, only: %i[new create edit], path_names: { new: 'play', edit: 'play' }
-    resources :mix_sounds, only: %i[create new]
+    resources :mix_sounds, only: %i[new]
   end
 
-  resources :mixes, only: %i[destroy update]
+  resources :mixes, only: %i[destroy update] do
+    resources :mix_sounds, only: %i[create]
+  end
   resources :mix_sounds, only: %i[edit update destroy]
 end

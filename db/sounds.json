@@ -8,37 +8,37 @@
         {
         "name": "rain",
         "file_url": "rain-pavement.mp3",
-        "width": 754,
-        "height": 156,
-        "left": 322,
-        "top": 12
+        "width": 700,
+        "height": 160,
+        "left": 350,
+        "top": 0
       },
 
       {
         "name": "neon-sign",
         "file_url": "neon-sign.mp3",
-        "width": 196,
-        "height": 110,
-        "left": 78,
-        "top": 101
+        "width": 171,
+        "height": 95,
+        "left": 168,
+        "top": 91
       },
 
       {
         "name": "keyboard",
         "file_url": "keyboard.mp3",
-        "width": 263,
+        "width": 236,
         "height": 285,
-        "left": 78,
-        "top": 503
+        "left": 168,
+        "top": 445
       },
 
       {
         "name": "sirens",
         "file_url": "sirens.mp3",
-        "width": 721,
+        "width": 627,
         "height": 114,
-        "left": 371,
-        "top": 596
+        "left": 424,
+        "top": 527
       },
 
       {
@@ -47,7 +47,7 @@
         "width": 450,
         "height": 114,
         "left": 531,
-        "top": 868
+        "top": 750
       }
       ]
 
@@ -62,17 +62,17 @@
         {
         "name": "howling wind",
         "file_url": "howling-wind.mp3",
-        "width": 1219,
+        "width": 1170,
         "height": 422,
-        "left": 293,
+        "left": 342,
         "top": 0
       },
 
       {
         "name": "church bells",
         "file_url": "church-bells.mp3",
-        "width": 270,
-        "height": 747,
+        "width": 319,
+        "height": 706,
         "left": 0,
         "top": 0
       },
@@ -80,37 +80,37 @@
       {
         "name": "grass-1",
         "file_url": "grass-wind.mp3",
-        "width": 212,
-        "height": 92,
-        "left": 251,
-        "top": 781
+        "width": 180,
+        "height": 74,
+        "left": 321,
+        "top": 691
       },
 
       {
         "name": "grass-2",
         "file_url": "grass-wind.mp3",
-        "width": 277,
-        "height": 218,
-        "left": 717,
-        "top": 764
+        "width": 280,
+        "height": 190,
+        "left": 713,
+        "top": 675
       },
 
       {
         "name": "waves",
         "file_url": "crashing-waves.mp3",
-        "width": 334,
-        "height": 132,
-        "left": 1098,
-        "top": 615
+        "width": 283,
+        "height": 113,
+        "left": 1052,
+        "top": 553
       },
 
       {
         "name": "campfire",
         "file_url": "campfire.mp3",
-        "width": 218,
-        "height": 276,
-        "left": 477,
-        "top": 672
+        "width": 177,
+        "height": 254,
+        "left": 503,
+        "top": 593
       }
       ]
 
@@ -125,55 +125,55 @@
       {
         "name": "rain-window-1",
         "file_url": "rain-window.mp3",
-        "width": 831,
-        "height": 532,
-        "left": 2,
-        "top": 90
+        "width": 769,
+        "height": 473,
+        "left": 65,
+        "top": 78
       },
 
       {
         "name": "rain-window-2",
         "file_url": "rain-window.mp3",
-        "width": 290,
-        "height": 250,
+        "width": 250,
+        "height": 223,
         "left": 833,
-        "top": 90
+        "top": 78
       },
 
       {
         "name": "arcade game",
         "file_url": "arcade-game.mp3",
-        "width": 231,
-        "height": 272,
-        "left": 150,
-        "top": 632
+        "width": 210,
+        "height": 249,
+        "left": 221,
+        "top": 554
       },
 
       {
         "name": "coffee sip",
         "file_url": "coffee-sipping.mp3",
-        "width": 168,
-        "height": 176,
-        "left": 1333,
-        "top": 728
+        "width": 143,
+        "height": 157,
+        "left": 1260,
+        "top": 639
       },
 
       {
         "name": "lamp",
         "file_url": "lamp.mp3",
-        "width": 268,
-        "height": 250,
-        "left": 1134,
+        "width": 242,
+        "height": 205,
+        "left": 1089,
         "top": 90
       },
 
       {
         "name": "page turn",
         "file_url": "page-turn.mp3",
-        "width": 268,
-        "height": 165,
-        "left": 622,
-        "top": 646
+        "width": 213,
+        "height": 149,
+        "left": 653,
+        "top": 567
       }
       ]
 
