@@ -191,9 +191,24 @@
   width: 100vw;
 }
 
+
+.description-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .description {
+    height: 115px;
+    margin-top: 100px;
+    width: 50%;
+    text-align: center;
+    font-size: 35px;
+  }
+
 .form-style {
   position: absolute;
   top: 300px;
   left: 550px;
   text-align: center;
+
 }
