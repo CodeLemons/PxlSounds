@@ -3,12 +3,22 @@
   align-items: center;
   margin-top: 75px;
   margin-left: 400px;
-  margin-right:400px;
+  margin-right: 400px;
   display: block;
   text-align: center;
+  width: 400px;
 }
 
 .new_user {
   width: 350px;
   margin: auto;
+}
+
+h2 {
+  margin-bottom: 3rem;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
 }

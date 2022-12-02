@@ -10,8 +10,8 @@
 </div>
 
 <div class="big-save"  data-controller="save" >
-  <button class="save-button" data-action="click->save#saveButton" data-save-target="save">
-    save
+  <button class="save-button btn btn-outline-secondary text-white" data-action="click->save#saveButton" data-save-target="save">
+    Create
   </button>
   <div class="hidden" data-save-target="form">
     <%= simple_form_for [@world, @mix] do |f| %>
@@ -19,10 +19,10 @@
         <%= f.input :name %>
       </div>
       <div>
-        <%= f.button :submit %>
+        <%= f.button :submit, class: "btn btn-outline-secondary text-white" %>
       </div>
     <% end %>
-    <button data-save-target="close" data-action="click->save#closeButton" >
+    <button class="btn btn-outline-secondary text-white" data-save-target="close" data-action="click->save#closeButton" >
       close
     </button>
   </div>
