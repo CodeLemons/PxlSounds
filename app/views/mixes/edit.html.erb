@@ -10,13 +10,13 @@
           <% if  @mix.sounds.include?(sound) %>
              <%= simple_form_for [@mix.mix_sounds.find_by(sound_id: sound.id)] do |f| %>
               <%= f.input :sound_id %>
-              <%= f.input :volume, input_html: { min: 1, max: 5 }%>
+              <%= f.input :volume, input_html: { min: 0, max: 5 }%>
               <%= f.submit %>
             <% end %>
           <% else %>
             <%= simple_form_for [@mix, @mix_sound] do |f| %>
               <%= f.input :sound_id, input_html: { value: sound.id } %>
-              <%= f.input :volume, input_html: { min: 1, max: 5, value: 5 }%>
+              <%= f.input :volume, input_html: { min: 0, max: 5, value: 5 }%>
               <%= f.submit %>
             <% end %>
           <% end %>
