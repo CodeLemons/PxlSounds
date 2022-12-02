@@ -2,7 +2,7 @@ class Sound < ApplicationRecord
   belongs_to :world
 
   has_one_attached :audio
-  has_many :mix_sounds
+  has_many :mix_sounds, dependent: :destroy
 
   validates :name, presence: true
   validates :path, presence: true
