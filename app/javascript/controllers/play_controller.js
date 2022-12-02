@@ -53,7 +53,7 @@ export default class extends Controller {
     let bgm = new Howl({
       src: `${this.bgsmValue}.mp3`,
       loop: true,
-      volume: 0.1,
+      volume: 0.3,
       onend: function() {
         console.log("Stopped bgm");
       }
