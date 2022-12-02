@@ -173,16 +173,15 @@
   }
 }
 
-.show-container {
-  .src {
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    filter: blur(2px);
-    -webkit-filter: blur(2px);
-    z-index: -1;
-  }
+.src {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  z-index: -1;
 }
+
 
 .src-2 {
   background-repeat: no-repeat;
@@ -191,6 +190,7 @@
   height: 100vh;
   width: 100vw;
 }
+
 
 .description-container{
   display: flex;
@@ -204,4 +204,11 @@
     text-align: center;
     font-size: 35px;
   }
+
+.form-style {
+  position: absolute;
+  top: 300px;
+  left: 550px;
+  text-align: center;
+
 }
