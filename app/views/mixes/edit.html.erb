@@ -1,49 +1,50 @@
-<div class="play-container" data-controller="play" style="position: relative;">
-  <%= cl_image_tag @world.image.key, class: "src-2" %>
-  <% @world.sounds.each do |sound| %>
-    <div data-play-target="sound"
-        style="position: absolute; width: <%= sound.width %>px; height: <%= sound.height %>px; left: <%= sound.start_x %>px; top: <%= sound.start_y %>px; cursor: pointer;"
-        data-action="click->play#toggleSound"
-        data-sound-file="<%= cl_video_path(sound.audio.key, resource_type: "video")%>"
-        data-enabled="<%= @mix.sounds.include?(sound) ? "true" : "false" %>"
-        data-volume="<%= @mix.sounds.include?(sound) ? @mix.mix_sounds.find_by(sound_id: sound.id).volume : 5 %>">
-          <% if  @mix.sounds.include?(sound) %>
-             <%= simple_form_for [@mix.mix_sounds.find_by(sound_id: sound.id)] do |f| %>
-              <%= f.input :sound_id %>
-              <%= f.input :volume, input_html: { min: 0, max: 5 }%>
-              <%= f.submit %>
+<div data-controller="play" data-play-bgsm-value="<%= cl_video_path(@world.bgm.key, resource_type: "video")%>">
+  <div class="play-container" style="position: relative;">
+    <%= cl_image_tag @world.image.key, class: "src-2" %>
+    <% @world.sounds.each do |sound| %>
+      <div data-play-target="sound"
+          style="position: absolute; width: <%= sound.width %>px; height: <%= sound.height %>px; left: <%= sound.start_x %>px; top: <%= sound.start_y %>px; border: solid white;"
+          data-action="click->play#toggleSound"
+          data-sound-file="<%= cl_video_path(sound.audio.key, resource_type: "video")%>"
+          data-enabled="<%= @mix.sounds.include?(sound) ? "true" : "false" %>"
+          data-volume="<%= @mix.sounds.include?(sound) ? @mix.mix_sounds.find_by(sound_id: sound.id).volume : 5 %>">
+            <% if  @mix.sounds.include?(sound) %>
+              <%= simple_form_for [@mix.mix_sounds.find_by(sound_id: sound.id)] do |f| %>
+                <%= f.input :sound_id %>
+                <%= f.input :volume, input_html: { min: 0, max: 5 }%>
+                <%= f.submit %>
+              <% end %>
+            <% else %>
+              <%= simple_form_for [@mix, @mix_sound] do |f| %>
+                <%= f.input :sound_id, input_html: { value: sound.id } %>
+                <%= f.input :volume, input_html: { min: 0, max: 5, value: 5 }%>
+                <%= f.submit %>
+              <% end %>
             <% end %>
-          <% else %>
-            <%= simple_form_for [@mix, @mix_sound] do |f| %>
-              <%= f.input :sound_id, input_html: { value: sound.id } %>
-              <%= f.input :volume, input_html: { min: 0, max: 5, value: 5 }%>
-              <%= f.submit %>
-            <% end %>
-          <% end %>
-     </div>
-  <% end %>
-  <div class="icon-back">
-    <%= link_to worlds_path do %>
-      <i class="fa-solid fa-arrow-left"></i>
+      </div>
     <% end %>
   </div>
-</div>
 
-<div class="big-save"  data-controller="save" >
-  <button class="save-button" data-action="click->save#saveButton" data-save-target="save">
-    save
-  </button>
-  <div class="hidden" data-save-target="form">
-    <%= simple_form_for [@mix] do |f| %>
-      <div>
-        <%= f.input :name %>
-      </div>
-      <div>
-        <%= f.button :submit %>
-      </div>
-    <% end %>
-    <button data-save-target="close" data-action="click->save#closeButton" >
-      close
+  <div class="big-save"  data-controller="save" >
+    <button class="save-button" data-action="click->save#saveButton" data-save-target="save">
+      save
     </button>
+    <div class="hidden" data-save-target="form">
+      <%= simple_form_for [@mix] do |f| %>
+        <div>
+          <%= f.input :name %>
+        </div>
+        <div>
+          <%= f.button :submit %>
+        </div>
+      <% end %>
+      <button data-save-target="close" data-action="click->save#closeButton" >
+        close
+      </button>
+    </div>
+    <button class="bgm-button"
+            data-play-target="bgm"
+            data-action="click->play#playBgm">
+            BGM</button>
   </div>
 </div>
