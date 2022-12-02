@@ -7,10 +7,6 @@
   // margin-right: 20px;
   height: 80px;
 
-  #logo {
-    width: 250px;
-  }
-
   p {
     font-size: 30px;
     margin-right: 0px;
@@ -31,6 +27,7 @@
       height: 50px;
     }
   }
+
 }
 
 .navbar-link {
@@ -38,5 +35,9 @@
 }
 
 .links {
+  text-decoration: none;
+}
+
+a {
   text-decoration: none;
 }

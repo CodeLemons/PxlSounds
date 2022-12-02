@@ -1,12 +1,14 @@
 <div class="show-container">
 
   <%= cl_image_tag @world.image.key, class: "src" %>
-      <%= render "shared/navbar" %>
-  <div class="world-content" >
-      <h1><%= @world.name%></h1>
-      <p><%= @world.description%></p>
-      <%= link_to new_world_mix_path(@world) do %>
-        <button class="show-button">take a view</button>
-      <% end %>
+  <div class="main-container">
+    <%= render "shared/navbar" %>
+    <div class="world-content" >
+        <h1><%= @world.name%></h1>
+        <p><%= @world.description%></p>
+        <%= link_to new_world_mix_path(@world) do %>
+          <button class="show-button">take a view</button>
+        <% end %>
+    </div>
   </div>
 </div>
