@@ -1,19 +1,6 @@
 <div class="play-container" data-controller="play" style="position: relative;">
-  <%= cl_image_tag @world.image.key, class: "src-2" %>
-  <% @world.sounds.each do |sound| %>
-    <div data-play-target="sound"
-        style="position: absolute; width: <%= sound.width %>px; height: <%= sound.height %>px; left: <%= sound.start_x %>px; top: <%= sound.start_y %>px; border: solid white;"
-        data-action="click->play#toggleSound"
-        data-sound-file="<%= cl_video_path(sound.audio.key, resource_type: "video")%>"
-        data-enabled="<%= @mix.sounds.include?(sound) ? "true" : "false" %>"></div>
-  <% end %>
-</div>
-
-<div class="big-save"  data-controller="save" >
-  <button class="save-button btn btn-outline-secondary text-white" data-action="click->save#saveButton" data-save-target="save">
-    Create
-  </button>
-  <div class="hidden" data-save-target="form">
+  <%= cl_image_tag @world.image.key, class: "src" %>
+  <div class="form-style">
     <%= simple_form_for [@world, @mix] do |f| %>
       <div>
         <%= f.input :name %>
@@ -22,8 +9,10 @@
         <%= f.button :submit, class: "btn btn-outline-secondary text-white" %>
       </div>
     <% end %>
-    <button class="btn btn-outline-secondary text-white" data-save-target="close" data-action="click->save#closeButton" >
-      close
-    </button>
+  </div>
+  <div class="icon-back">
+    <%= link_to worlds_path do %>
+      <i class="fa-solid fa-arrow-left"></i>
+    <% end %>
   </div>
 </div>

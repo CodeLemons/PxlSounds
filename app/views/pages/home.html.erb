@@ -1,5 +1,15 @@
 <%# raise %>
 <!-- <img style="width: 100vw; heigth: 100vh;" src="<%= cl_image_tag @world.image.key %>" alt=""> -->
 
-<div style="height: 100vh; background-image: url('<%= cl_image_path @world.image.key %>'); backgroud-repeat: no-repeat; background-size: 100% 100%;">
+<%= cl_image_tag @world.image.key, class: "src" %>
+<div class="main-container">
+  <%= render "shared/navbar" %>
+  <div class="description-container">
+    <div class=description>
+      <h1>Welcome!</h1>
+      <p style="color: #DF2935">A place where you</p>
+      <p style="color: #FDCA40">can create the </p>
+      <p style="color: #3772FF">environment you want!</p>
+    </div>
+  </div>
 </div>
