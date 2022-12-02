@@ -24,7 +24,7 @@ class MixesController < ApplicationController
   def update
     @mix.update(mix_params)
 
-    redirect_to edit_world_mix_path(@mix), notice: "Succesfully updated"
+    redirect_to edit_world_mix_path(@mix.world, @mix), notice: "Succesfully updated"
   end
 
   def destroy
