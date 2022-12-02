@@ -12,7 +12,7 @@
       <% if current_user.photo.attached? %>
         <%= cl_image_tag current_user.photo.key %>
       <% else %>
-        <%= image_tag "Temp_logo.jpeg" %>
+        <%= image_tag "Temp_logo.jpg" %>
       <% end %>
     <% end %>
     <%# End of cloudinary %>
