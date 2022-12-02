@@ -6,12 +6,13 @@ import {Howl} from 'howler';
 
 // Connects to data-controller="play"
 export default class extends Controller {
-  static targets = ["sound"]
+  static targets = ["sound", "bgm"]
   static values = {
-    cloud: String
+    bgsm: String
   }
-  connect() {
 
+  connect() {
+    // console.log(this.bgsmValue);
     // console.log(`${this.cloudValue}.mp3`);
     // let bgm = new Howl({
     //   src: `${this.cloudValue}.mp3`,
@@ -46,6 +47,17 @@ export default class extends Controller {
       sfx.play();
     });
 
+  }
+
+  playBgm() {
+    let bgm = new Howl({
+      src: `${this.bgsmValue}.mp3`,
+      loop: true,
+      onend: function() {
+        console.log("Stopped bgm");
+      }
+    })
+    bgm.play()
   }
 
   toggleSound(e) {
