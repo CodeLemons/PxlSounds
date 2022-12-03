@@ -9,7 +9,9 @@
           data-enabled="<%= @mix.sounds.include?(sound) ? "true" : "false" %>"
           data-volume="<%= @mix.sounds.include?(sound) ? @mix.mix_sounds.find_by(sound_id: sound.id).volume : 5 %>">
             <% if  @mix.sounds.include?(sound) %>
-              <%= simple_form_for [@mix.mix_sounds.find_by(sound_id: sound.id)], defaults: { input_html: { class: 'form-box-volume' } } do |f| %>
+              <%= simple_form_for [@mix.mix_sounds.find_by(sound_id: sound.id)],
+                                   defaults: { input_html: { class: 'form-box-volume' } },
+                                   data: {play_target: "form", action: "submit->play#send"} do |f| %>
                 <%= f.input :sound_id, input_html: { class: 'input-box' }, label: false %>
                 <%= f.input :volume, input_html: { min: 0, max: 5 }, label: false%>
                 <%#= f.submit, class: "submit-button" %>

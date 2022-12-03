@@ -6,44 +6,21 @@ import {Howl} from 'howler';
 
 // Connects to data-controller="play"
 export default class extends Controller {
-  static targets = ["sound", "bgm"]
+  static targets = ["sound", "bgm", "form"]
   static values = {
     bgsm: String
   }
 
   connect() {
-    // console.log(this.bgsmValue);
-    // console.log(`${this.cloudValue}.mp3`);
-    // let bgm = new Howl({
-    //   src: `${this.cloudValue}.mp3`,
-    //   loop: true,
-    //   onend: function() {
-    //     console.log("Stopped bgm");
-    //   }
-    // })
-    // bgm.play()
-
-    // console.log(this.bgmTarget);
-
-    // console.log(`${this.cloudValue}.resume`);
-
     this.#getSoundFiles().forEach((sound) => {
       let sfx = new Howl({
         src: sound.file,
         volume: sound.volume,
         loop: true,
         onend: function() {
-          console.log("Stopped");
+          // console.log("Stopped");
         }
       })
-      // let bgm = new Howl({
-      //   src: sound.bgm,
-      //   volume: 1,
-      //   onend: function() {
-      //     console.log("stopped bgm");
-      //   }
-      // })
-      // bgm.play();
       sfx.play();
     });
 
@@ -55,22 +32,35 @@ export default class extends Controller {
       loop: true,
       volume: 0.3,
       onend: function() {
-        console.log("Stopped bgm");
+        // console.log("Stopped bgm");
       }
     })
     bgm.play()
   }
 
   toggleSound(e) {
-    // console.log(e.target.dataset.soundFile);
-    // this.#getSoundFiles();
     let sfx = new Howl({
       src: this.#getSoundFiles(),
       // loop: true,
       onend: function() {
-        console.log("Stopped");
+        // console.log("Stopped");
       }
     })
+
+  }
+
+  send(e){
+    e.preventDefault();
+    console.log("FORM SUBMITTED");
+
+    // TODO: submit form with ajax
+    // fetch(this.formTarget.ation, {
+    //   method: "PATCH",
+    //   headers: { "Accept": "application/json" },
+    //   body: new FormData(this.formTarget)
+    // })
+    //   .then(response => response.json())
+    //   .then((data) => { console.log(data);})
 
   }
 
@@ -83,7 +73,7 @@ export default class extends Controller {
       }
     });
 
-    console.log(array);
+    // console.log(array);
     return array;
   }
 }
