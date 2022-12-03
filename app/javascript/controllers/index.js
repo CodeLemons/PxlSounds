@@ -10,5 +10,8 @@ application.register("hello", HelloController)
 import PlayController from "./play_controller"
 application.register("play", PlayController)
 
+import RenderIconController from "./render_icon_controller"
+application.register("render-icon", RenderIconController)
+
 import SaveController from "./save_controller"
 application.register("save", SaveController)

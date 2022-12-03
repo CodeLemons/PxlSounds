@@ -2,31 +2,31 @@
   <div class="play-container" style="position: relative;">
     <%= cl_image_tag @world.image.key, class: "src-2" %>
     <% @world.sounds.each do |sound| %>
-      <div data-play-target="sound"
-          style="position: absolute; width: <%= sound.width %>%; height: <%= sound.height %>%; left: <%= sound.start_x %>%; top: <%= sound.start_y %>%; cursor: pointer; border: 1px solid white"
-          data-action="click->play#toggleSound"
-          data-sound-file="<%= cl_video_path(sound.audio.key, resource_type: "video")%>"
-          data-enabled="<%= @mix.sounds.include?(sound) ? "true" : "false" %>"
-          data-volume="<%= @mix.sounds.include?(sound) ? @mix.mix_sounds.find_by(sound_id: sound.id).volume : 5 %>">
-            <% if  @mix.sounds.include?(sound) %>
-              <%= simple_form_for [@mix.mix_sounds.find_by(sound_id: sound.id)], defaults: { input_html: { class: 'form-box-volume' } } do |f| %>
-                <%= f.input :sound_id, input_html: { class: 'input-box' }, label: false %>
-                <%= f.input :volume, input_html: { min: 0, max: 5 }, label: false%>
-                <%#= f.submit, class: "submit-button" %>
-                <%= button_tag type: 'submit' do %>
-                    <i class="fa-solid fa-pen-to-square"></i>
-                <% end %>
-              <% end %>
-            <% else %>
-              <%= simple_form_for [@mix, @mix_sound], defaults: { input_html: { class: 'form-box-volume' } } do |f| %>
-                <%= f.input :sound_id, input_html: { value: sound.id, class: 'input-box' }, label: false %>
-                <%= f.input :volume, input_html: { min: 0, max: 5, value: 5 }, label: false%>
-                <%#= f.submit, class: "submit-button" %>
-                <%= button_tag type: 'submit' do %>
-                    <i class="fa-solid fa-pen-to-square"></i>
-                <% end %>
+      <div class="sound-form" data-play-target="sound"
+        style="position: absolute; width: <%= sound.width %>%; height: <%= sound.height %>%; left: <%= sound.start_x %>%; top: <%= sound.start_y %>%; cursor: pointer;"
+        data-action="click->play#toggleSound"
+        data-sound-file="<%= cl_video_path(sound.audio.key, resource_type: "video")%>"
+        data-enabled="<%= @mix.sounds.include?(sound) ? "true" : "false" %>"
+        data-volume="<%= @mix.sounds.include?(sound) ? @mix.mix_sounds.find_by(sound_id: sound.id).volume : 5 %>">
+          <% if  @mix.sounds.include?(sound) %>
+            <%= simple_form_for [@mix.mix_sounds.find_by(sound_id: sound.id)], defaults: { input_html: { class: 'form-box-volume' } } do |f| %>
+              <%= f.input :sound_id, input_html: { class: 'input-box' }, label: false %>
+              <%= f.input :volume, input_html: { min: 0, max: 5 }, label: false%>
+              <%#= f.submit, class: "submit-button" %>
+              <%= button_tag type: 'submit' do %>
+                  <i class="fa-solid fa-pen-to-square"></i>
               <% end %>
             <% end %>
+          <% else %>
+            <%= simple_form_for [@mix, @mix_sound], defaults: { input_html: { class: 'form-box-volume' } } do |f| %>
+              <%= f.input :sound_id, input_html: { value: sound.id, class: 'input-box' }, label: false %>
+              <%= f.input :volume, input_html: { min: 0, max: 5, value: 5 }, label: false%>
+              <%#= f.submit, class: "submit-button" %>
+              <%= button_tag type: 'submit' do %>
+                  <i class="fa-solid fa-pen-to-square"></i>
+              <% end %>
+            <% end %>
+          <% end %>
       </div>
       <% end %>
       <div class="icon-back">
