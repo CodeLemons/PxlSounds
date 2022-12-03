@@ -227,3 +227,11 @@
 .form-box-volume {
   width: 5ch;
 }
+
+.sound-form {
+  box-shadow: none;
+}
+
+.sound-form:hover {
+  box-shadow: inset 1px 1px 15px gold;
+}

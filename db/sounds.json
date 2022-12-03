@@ -8,46 +8,46 @@
         {
         "name": "rain",
         "file_url": "rain-pavement.mp3",
-        "width": 700,
-        "height": 160,
-        "left": 350,
+        "width": 46,
+        "height": 19,
+        "left": 23,
         "top": 0
       },
 
       {
         "name": "neon-sign",
         "file_url": "neon-sign.mp3",
-        "width": 171,
-        "height": 95,
-        "left": 168,
-        "top": 91
+        "width": 11,
+        "height": 10,
+        "left": 11,
+        "top": 11
       },
 
       {
         "name": "keyboard",
         "file_url": "keyboard.mp3",
-        "width": 236,
-        "height": 285,
-        "left": 168,
-        "top": 445
+        "width": 15,
+        "height": 28,
+        "left": 11,
+        "top": 51
       },
 
       {
         "name": "sirens",
         "file_url": "sirens.mp3",
-        "width": 627,
-        "height": 114,
-        "left": 424,
-        "top": 527
+        "width": 42,
+        "height": 12,
+        "left": 27,
+        "top": 62
       },
 
       {
         "name": "spaceship",
         "file_url": "spaceships.mp3",
-        "width": 450,
-        "height": 114,
-        "left": 531,
-        "top": 750
+        "width": 28,
+        "height": 12,
+        "left": 35,
+        "top": 88
       }
       ]
 
@@ -62,17 +62,17 @@
         {
         "name": "howling wind",
         "file_url": "howling-wind.mp3",
-        "width": 1170,
-        "height": 422,
-        "left": 342,
+        "width": 77,
+        "height": 45,
+        "left": 23,
         "top": 0
       },
 
       {
         "name": "church bells",
         "file_url": "church-bells.mp3",
-        "width": 319,
-        "height": 706,
+        "width": 20,
+        "height": 75,
         "left": 0,
         "top": 0
       },
@@ -80,37 +80,37 @@
       {
         "name": "grass-1",
         "file_url": "grass-wind.mp3",
-        "width": 180,
-        "height": 74,
-        "left": 321,
-        "top": 691
+        "width": 13,
+        "height": 9,
+        "left": 21,
+        "top": 79
       },
 
       {
         "name": "grass-2",
         "file_url": "grass-wind.mp3",
-        "width": 280,
-        "height": 190,
-        "left": 713,
-        "top": 675
+        "width": 17,
+        "height": 21,
+        "left": 48,
+        "top": 79
       },
 
       {
         "name": "waves",
         "file_url": "crashing-waves.mp3",
-        "width": 283,
-        "height": 113,
-        "left": 1052,
-        "top": 553
+        "width": 21,
+        "height": 12,
+        "left": 66,
+        "top": 64
       },
 
       {
         "name": "campfire",
         "file_url": "campfire.mp3",
-        "width": 177,
-        "height": 254,
-        "left": 503,
-        "top": 593
+        "width": 11,
+        "height": 23,
+        "left": 35,
+        "top": 69
       }
       ]
 
@@ -134,46 +134,46 @@
       {
         "name": "rain-window-2",
         "file_url": "rain-window.mp3",
-        "width": 250,
-        "height": 223,
-        "left": 833,
-        "top": 78
+        "width": 17,
+        "height": 26,
+        "left": 54,
+        "top": 9
       },
 
       {
         "name": "arcade game",
         "file_url": "arcade-game.mp3",
-        "width": 210,
-        "height": 249,
-        "left": 221,
-        "top": 554
+        "width": 14,
+        "height": 29,
+        "left": 15,
+        "top": 64
       },
 
       {
         "name": "coffee sip",
         "file_url": "coffee-sipping.mp3",
-        "width": 143,
-        "height": 157,
-        "left": 1260,
-        "top": 639
+        "width": 10,
+        "height": 18,
+        "left": 83,
+        "top": 74
       },
 
       {
         "name": "lamp",
         "file_url": "lamp.mp3",
-        "width": 242,
-        "height": 205,
-        "left": 1089,
-        "top": 90
+        "width": 16,
+        "height": 25,
+        "left": 71,
+        "top": 9
       },
 
       {
         "name": "page turn",
         "file_url": "page-turn.mp3",
-        "width": 213,
-        "height": 149,
-        "left": 653,
-        "top": 567
+        "width": 13,
+        "height": 16,
+        "left": 43,
+        "top": 66
       }
       ]
 
