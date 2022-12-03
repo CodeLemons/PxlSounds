@@ -11,19 +11,20 @@
           <% if  @mix.sounds.include?(sound) %>
             <%= simple_form_for [@mix.mix_sounds.find_by(sound_id: sound.id)], defaults: { input_html: { class: 'form-box-volume' } } do |f| %>
               <%= f.input :sound_id, input_html: { class: 'input-box' }, label: false %>
-              <%= f.input :volume, input_html: { min: 0, max: 5 }, label: false%>
+              <%= f.input :volume, input_html: { min: 0, max: 5 }, label: false, as: "range"%>
+
               <%#= f.submit, class: "submit-button" %>
               <%= button_tag type: 'submit' do %>
-                  <i class="fa-solid fa-pen-to-square"></i>
+                <i class="fa-regular fa-square-check"></i>
               <% end %>
             <% end %>
           <% else %>
             <%= simple_form_for [@mix, @mix_sound], defaults: { input_html: { class: 'form-box-volume' } } do |f| %>
               <%= f.input :sound_id, input_html: { value: sound.id, class: 'input-box' }, label: false %>
-              <%= f.input :volume, input_html: { min: 0, max: 5, value: 5 }, label: false%>
+              <%= f.input :volume, input_html: { min: 0, max: 5, value: 5 }, label: false, as: "range" %>
               <%#= f.submit, class: "submit-button" %>
               <%= button_tag type: 'submit' do %>
-                  <i class="fa-solid fa-pen-to-square"></i>
+                  <i class="fa-regular fa-square-check"></i>
               <% end %>
             <% end %>
           <% end %>
