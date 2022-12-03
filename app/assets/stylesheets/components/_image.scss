@@ -1,0 +1,16 @@
+.src {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  z-index: -1;
+}
+
+.src-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+}
