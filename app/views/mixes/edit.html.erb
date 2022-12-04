@@ -41,22 +41,19 @@
     <button class="save-button" data-action="click->save#saveButton" data-save-target="save">
       save
     </button>
-    <div class="hidden" data-save-target="form">
+    <div class="my-input" data-save-target="form">
       <%= simple_form_for [@mix] do |f| %>
         <div>
-          <%= f.input :name %>
+          <%= f.input :name, label: false %>
         </div>
         <div>
           <%= f.button :submit %>
         </div>
       <% end %>
-      <button data-save-target="close" data-action="click->save#closeButton" >
-        close
-      </button>
     </div>
+  </div>
     <button class="bgm-button"
             data-play-target="bgm"
             data-action="click->play#playBgm">
             BGM</button>
-  </div>
 </div>
