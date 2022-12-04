@@ -54,13 +54,13 @@ export default class extends Controller {
     console.log("FORM SUBMITTED");
 
     // TODO: submit form with ajax
-    // fetch(this.formTarget.ation, {
-    //   method: "PATCH",
-    //   headers: { "Accept": "application/json" },
-    //   body: new FormData(this.formTarget)
-    // })
-    //   .then(response => response.json())
-    //   .then((data) => { console.log(data);})
+    fetch(this.formTarget.ation, {
+      method: "PATCH",
+      headers: { "Accept": "application/json" },
+      body: new FormData(this.formTarget)
+    })
+      .then(response => response.json())
+      .then((data) => { console.log(data);})
 
   }
 
