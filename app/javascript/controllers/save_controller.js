@@ -2,9 +2,9 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="save"
 export default class extends Controller {
-  static targets = ["form", "save", "close"]
+  static targets = ["form", "save", "close", "sound"]
   connect() {
-    console.log("hello from save controller")
+    // console.log("hello from save controller")
   }
 
   saveButton() {
@@ -16,5 +16,9 @@ export default class extends Controller {
   closeButton(e) {
     // this.formTarget.classList.add("hidden")
     // this.saveTarget.classList.remove("hidden")
+  }
+
+  soundButton() {
+    this.soundTarget.classList.toggle('show')
   }
 }

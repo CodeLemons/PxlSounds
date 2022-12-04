@@ -10,20 +10,12 @@
   display: none;
 }
 
-.form-box-volume {
-  width: 10ch;
-  transform: rotate(-90deg);
-}
-
-.simple-form {
-  width: 25%;
-}
-
 .sound-form {
   display: flex;
-  justify-content: end;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   box-shadow: none;
+  text-align: center;
 
   .form-control {
     justify-content: center;
@@ -32,7 +24,6 @@
     border: none;
     background-color: transparent !important;
     color: white;
-    text-shadow: 1px 1px 25px rgba(0, 0, 0, 0.5);
 
   }
 

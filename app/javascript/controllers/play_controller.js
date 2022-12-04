@@ -26,6 +26,7 @@ export default class extends Controller {
 
   }
 
+
   playBgm() {
     let bgm = new Howl({
       src: `${this.bgsmValue}.mp3`,
@@ -46,7 +47,6 @@ export default class extends Controller {
         console.log("Stopped");
       }
     })
-
   }
 
   #getSoundFiles() {
