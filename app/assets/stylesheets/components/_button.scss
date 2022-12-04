@@ -4,9 +4,37 @@
   top: 20px;
 }
 
-.save-button-gone {
-  display: none;
+// .save-button-gone {
+//   display: none;
+// }
+
+.bgm-button {
+  position: absolute;
+  top: 20px;
+  left: 120px;
 }
+
+.big-save {
+  overflow: hidden;
+  display: inline-block;
+  // vertical-align: middle;
+
+  .my-input {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: opacity .25s, transform .25s;
+
+    .button {
+      display: none;
+    }
+  }
+
+  .my-input.show {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 
 .hidden {
   display: none;
