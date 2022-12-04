@@ -1,0 +1,13 @@
+.form-box-volume {
+  width: 10ch;
+}
+
+.range {
+  // background: #111;
+  outline: none;
+}
+
+.range::-webkit-slider-thumb {
+  background: #00fd0a;
+  cursor: pointer;
+}
