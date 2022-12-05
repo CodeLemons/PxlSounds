@@ -13,5 +13,8 @@ application.register("play", PlayController)
 import RandomDisplayController from "./random_display_controller"
 application.register("random-display", RandomDisplayController)
 
+import RenderIconController from "./render_icon_controller"
+application.register("render-icon", RenderIconController)
+
 import SaveController from "./save_controller"
 application.register("save", SaveController)

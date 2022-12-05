@@ -1,0 +1,45 @@
+.form-style {
+  position: absolute;
+  top: 300px;
+  left: 40%;
+  text-align: center;
+
+}
+
+.input-box {
+  display: none;
+}
+
+.sound-form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-shadow: none;
+  text-align: center;
+
+  .form-control {
+    justify-content: center;
+    margin-left: 15px;
+    padding: 0;
+    border: none;
+    background-color: transparent !important;
+    color: white;
+
+  }
+
+  .is-valid {
+    background-image: none;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    color: #38E54D;
+    text-shadow: 1px 1px 25px rgba(0, 0, 0, 0.5);
+    font-size: 35px;
+  }
+}
+
+.sound-form:hover {
+  box-shadow: inset 1px 1px 15px gold;
+}

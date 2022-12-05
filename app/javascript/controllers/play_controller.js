@@ -12,21 +12,6 @@ export default class extends Controller {
   }
 
   connect() {
-    // console.log(this.bgsmValue);
-    // console.log(`${this.cloudValue}.mp3`);
-    // let bgm = new Howl({
-    //   src: `${this.cloudValue}.mp3`,
-    //   loop: true,
-    //   onend: function() {
-    //     console.log("Stopped bgm");
-    //   }
-    // })
-    // bgm.play()
-
-    // console.log(this.bgmTarget);
-
-    // console.log(`${this.cloudValue}.resume`);
-
     this.#getSoundFiles().forEach((sound) => {
       let sfx = new Howl({
         src: sound.file,
@@ -36,24 +21,17 @@ export default class extends Controller {
           console.log("Stopped");
         }
       })
-      // let bgm = new Howl({
-      //   src: sound.bgm,
-      //   volume: 1,
-      //   onend: function() {
-      //     console.log("stopped bgm");
-      //   }
-      // })
-      // bgm.play();
       sfx.play();
     });
 
   }
 
+
   playBgm() {
     let bgm = new Howl({
       src: `${this.bgsmValue}.mp3`,
       loop: true,
-      volume: 0.1,
+      volume: 0.3,
       onend: function() {
         console.log("Stopped bgm");
       }
@@ -62,8 +40,6 @@ export default class extends Controller {
   }
 
   toggleSound(e) {
-    // console.log(e.target.dataset.soundFile);
-    // this.#getSoundFiles();
     let sfx = new Howl({
       src: this.#getSoundFiles(),
       // loop: true,
@@ -71,7 +47,6 @@ export default class extends Controller {
         console.log("Stopped");
       }
     })
-
   }
 
   #getSoundFiles() {
