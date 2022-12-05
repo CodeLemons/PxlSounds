@@ -33,7 +33,7 @@
       save
     </button>
     <div class="my-input" data-save-target="form">
-      <%= simple_form_for [@mix] do |f| %>
+      <%= simple_form_for [@mix], data: { action: "submit->save#update" } do |f| %>
         <div>
           <%= f.input :name, label: false %>
         </div>
