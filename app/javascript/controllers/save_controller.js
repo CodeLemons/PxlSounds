@@ -18,7 +18,7 @@ export default class extends Controller {
     // this.saveTarget.classList.remove("hidden")
   }
 
-  soundButton() {
-    this.soundTarget.classList.toggle('show')
-  }
+  // soundButton() {
+  //   this.soundTarget.classList.toggle('show')
+  // }
 }
