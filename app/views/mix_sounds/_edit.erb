@@ -5,8 +5,10 @@
   <%= f.input :volume, input_html: { min: 0, max: 5, step: 0.01, data: { action: "change->play#changeVolume", sound: sound.id }, value: @mix.mix_sounds.find_by(sound_id: sound.id).volume }, label: false, as: "range" %>
   <%#= f.submit, class: "submit-button" %>
   <% if @mix.mix_sounds.find_by(sound_id: sound.id).volume.zero? %>
-    # show icon unmuted
+    <i class="fa-solid fa-volume-xmark"></i>
+  <% elsif @mix.mix_sounds.find_by(sound_id: sound.id).volume < 2 %>
+    <i class="fa-solid fa-volume-low"></i>
   <% else %>
-    # show icon muted
+    <i class="fa-solid fa-volume-high"></i>
   <% end %>
 <% end %>
