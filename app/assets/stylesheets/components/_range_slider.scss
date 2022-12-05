@@ -3,11 +3,20 @@
 }
 
 .range {
+  display: none;
   // background: #111;
   outline: none;
+
+  .form-range {
+    // transform: rotate(90deg);
+  }
 }
 
 .range::-webkit-slider-thumb {
   background: #00fd0a;
   cursor: pointer;
+}
+
+.sound-form:hover .range {
+  display: block;
 }
