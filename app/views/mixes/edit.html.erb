@@ -5,26 +5,18 @@
       <div class="sound-form" data-play-target="sound"
         style="position: absolute; width: <%= sound.width %>%; height: <%= sound.height %>%; left: <%= sound.start_x %>%; top: <%= sound.start_y %>%; cursor: pointer;"
         data-action="click->play#toggleSound"
+        data-sound-id="<%= sound.id  %>"
         data-sound-file="<%= cl_video_path(sound.audio.key, resource_type: "video")%>"
         data-enabled="<%= @mix.sounds.include?(sound) ? "true" : "false" %>"
-        data-volume="<%= @mix.sounds.include?(sound) ? @mix.mix_sounds.find_by(sound_id: sound.id).volume : 5 %>">
+        data-volume="<%= @mix.sounds.include?(sound) ? @mix.mix_sounds.find_by(sound_id: sound.id).volume : 0 %>">
           <% if  @mix.sounds.include?(sound) %>
-            <%= simple_form_for [@mix.mix_sounds.find_by(sound_id: sound.id)], defaults: { input_html: { class: 'form-box-volume' } } do |f| %>
-              <%= f.input :sound_id, input_html: { class: 'input-box' }, label: false %>
-              <%= f.input :volume, input_html: { min: 0, max: 5, step: 0.01 }, label: false, as: "range" %>
-              <%#= f.submit, class: "submit-button" %>
-              <%= button_tag type: 'submit' do %>
-                <i class="fa-regular fa-square-check"></i>
-              <% end %>
-            <% end %>
+            <%= render "/mix_sounds/edit", mix: @mix, sound: sound %>
           <% else %>
-            <%= simple_form_for [@mix, @mix_sound], defaults: { input_html: { class: 'form-box-volume' } } do |f| %>
+            <%= simple_form_for [@mix, @mix_sound], defaults: { input_html: { class: 'form-box-volume' } }, data: { sound: sound.id, action: "submit->play#send", play_target: "form"} do |f| %>
               <%= f.input :sound_id, input_html: { value: sound.id, class: 'input-box' }, label: false %>
-              <%= f.input :volume, input_html: { min: 0, max: 5, value: 5, step: 0.01 }, label: false, as: "range", class: "range" %>
+              <%= f.input :volume, input_html: { min: 0, max: 5, value: 0, step: 0.01, data: { action: "change->play#changeVolume", sound: sound.id } }, label: false, as: "range", class: "range" %>
               <%#= f.submit, class: "submit-button" %>
-              <%= button_tag type: 'submit' do %>
-                  <i class="fa-regular fa-square-check"></i>
-              <% end %>
+              <i class="fa-solid fa-volume-xmark text-danger"></i>
             <% end %>
           <% end %>
       </div>
@@ -41,7 +33,7 @@
       save
     </button>
     <div class="my-input" data-save-target="form">
-      <%= simple_form_for [@mix] do |f| %>
+      <%= simple_form_for [@mix], data: { action: "submit->save#update" } do |f| %>
         <div>
           <%= f.input :name, label: false %>
         </div>
