@@ -6,7 +6,7 @@ import {Howl} from 'howler';
 
 // Connects to data-controller="play"
 export default class extends Controller {
-  static targets = ["sound", "bgm", "form"]
+  static targets = ["sound", "bgm", "form", "icon"]
   static values = {
     bgsm: String
   }
@@ -107,6 +107,16 @@ export default class extends Controller {
               sound.dataset.enabled = data.mix_sound.volume > 0 ? true : false;
               sound.dataset.volume = data.mix_sound.volume;
               console.log("Volume changed");
+              if (sound.dataset.volume == 0) {
+                e.target.children[4].classList.remove("fa-solid", "fa-volume-xmark", "text-danger", "fa-volume-low", "text-warning", "fa-volume-high", "text-success")
+                e.target.children[4].classList.add("fa-solid", "fa-volume-xmark", "text-danger")
+              } else if (sound.dataset.volume < 3) {
+                e.target.children[4].classList.remove("fa-solid", "fa-volume-xmark", "text-danger", "fa-volume-low", "text-warning", "fa-volume-high", "text-success")
+                e.target.children[4].classList.add("fa-solid", "fa-volume-low", "text-warning")
+              } else {
+                e.target.children[4].classList.remove("fa-solid", "fa-volume-xmark", "text-danger", "fa-volume-low", "text-warning", "fa-volume-high", "text-success")
+                e.target.children[4].classList.add("fa-solid", "fa-volume-high", "text-success")
+              }
             }
           });
           this.#playSounds();
