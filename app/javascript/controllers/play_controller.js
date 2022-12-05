@@ -12,8 +12,14 @@ export default class extends Controller {
   }
 
   connect() {
+    this.playBgm();
     this.#playSounds();
 
+  }
+
+  disconnect() {
+    Howler.unload();
+    console.log("DISCONNECTED");
   }
 
   #playSounds() {
@@ -51,11 +57,13 @@ export default class extends Controller {
       src: `${this.bgsmValue}.mp3`,
       loop: true,
       volume: 0.3,
+      autoplay: true,
       onend: function() {
         // console.log("Stopped bgm");
       }
     })
     bgm.play()
+    console.log("PLAYING BGM");
   }
 
   toggleSound(e) {
