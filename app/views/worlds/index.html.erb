@@ -32,10 +32,17 @@
         <% end %>
       </div>
     </div>
-    <div class="image-container" >
-      <%# <% cl_image_tag @mixes.each do |mix| %>
-        <%# <%= mix.world.image.key, class: "src" %>
-      <%# <% end %>
+    <div class="image-container", data-controller="random-display" >
+      <div class="image-box", data-random-display-target="image" >
+        <%# worlds_images = [] %>
+        <%# @worlds.each do |world| %>
+          <%# worlds_images << world.image.key %>
+        <%# end %>
+        <%= cl_image_tag @worlds.sample.image.key %>
+        <%# <% cl_image_tag @mixes.each do |mix| %>
+          <%# <%= mix.world.image.key, class: "src" %>
+        <%# <% end %>
+       </div>
       <div class="mix-overlay">
         <div class="mix-image">
           <i class="fa-solid fa-circle-play"></i>

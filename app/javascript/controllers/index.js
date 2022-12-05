@@ -10,5 +10,8 @@ application.register("hello", HelloController)
 import PlayController from "./play_controller"
 application.register("play", PlayController)
 
+import RandomDisplayController from "./random_display_controller"
+application.register("random-display", RandomDisplayController)
+
 import SaveController from "./save_controller"
 application.register("save", SaveController)
