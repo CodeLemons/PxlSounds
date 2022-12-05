@@ -13,8 +13,7 @@
                                    defaults: { input_html: { class: 'form-box-volume' } },
                                    data: {play_target: "form", action: "submit->play#send"} do |f| %>
               <%= f.input :sound_id, input_html: { class: 'input-box' }, label: false %>
-              <%= f.input :volume, input_html: { min: 0, max: 5, step: 0.01 }, label: false, as: "range"%>
-
+              <%= f.input :volume, input_html: { min: 0, max: 5, step: 0.01 }, label: false, as: "range" %>
               <%#= f.submit, class: "submit-button" %>
               <%= button_tag type: 'submit' do %>
                 <i class="fa-regular fa-square-check"></i>
@@ -23,7 +22,7 @@
           <% else %>
             <%= simple_form_for [@mix, @mix_sound], defaults: { input_html: { class: 'form-box-volume' } } do |f| %>
               <%= f.input :sound_id, input_html: { value: sound.id, class: 'input-box' }, label: false %>
-              <%= f.input :volume, input_html: { min: 0, max: 5, value: 5, step: 0.01 }, label: false, as: "range" %>
+              <%= f.input :volume, input_html: { min: 0, max: 5, value: 5, step: 0.01 }, label: false, as: "range", class: "range" %>
               <%#= f.submit, class: "submit-button" %>
               <%= button_tag type: 'submit' do %>
                   <i class="fa-regular fa-square-check"></i>
@@ -43,22 +42,19 @@
     <button class="save-button" data-action="click->save#saveButton" data-save-target="save">
       save
     </button>
-    <div class="hidden" data-save-target="form">
+    <div class="my-input" data-save-target="form">
       <%= simple_form_for [@mix] do |f| %>
         <div>
-          <%= f.input :name %>
+          <%= f.input :name, label: false %>
         </div>
         <div>
           <%= f.button :submit %>
         </div>
       <% end %>
-      <button data-save-target="close" data-action="click->save#closeButton" >
-        close
-      </button>
     </div>
+  </div>
     <button class="bgm-button"
             data-play-target="bgm"
             data-action="click->play#playBgm">
             BGM</button>
-  </div>
 </div>
