@@ -14,8 +14,8 @@
               <div class="world-name">
                 <p><%= mix.world.name %></p>
               </div>
-              <div class="play-button" data-controller="render-icon" data-action="click->render-icon#renderOnClick">
-                <i class="fa-solid fa-circle-play" data-render-icon-target="button"></i>
+              <div class="play-button" data-controller="render-icon" data-render-icon-image-value="<%= cl_image_path mix.world.image.key %>" data-action="click->render-icon#renderOnClick">
+                <i class="fa-solid fa-circle-play", data-render-icon-target="button"></i>
               </div>
             </div>
           <% end %>
@@ -32,17 +32,7 @@
         <% end %>
       </div>
     </div>
-    <div class="image-container", data-controller="random-display" >
-      <div class="image-box", data-random-display-target="image" >
-        <%# worlds_images = [] %>
-        <%# @worlds.each do |world| %>
-          <%# worlds_images << world.image.key %>
-        <%# end %>
-        <%= cl_image_tag @worlds.sample.image.key %>
-        <%# <% cl_image_tag @mixes.each do |mix| %>
-          <%# <%= mix.world.image.key, class: "src" %>
-        <%# <% end %>
-       </div>
+    <div class="image-container", style="background-image: url('<%= cl_image_path @worlds.sample.image.key %>')">
       <div class="mix-overlay">
         <div class="mix-image">
           <i class="fa-solid fa-circle-play"></i>
