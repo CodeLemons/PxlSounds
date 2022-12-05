@@ -106,6 +106,7 @@ export default class extends Controller {
             if (sound.dataset.soundId == data.mix_sound.sound_id) {
               sound.dataset.enabled = data.mix_sound.volume > 0 ? true : false;
               sound.dataset.volume = data.mix_sound.volume;
+              console.log("Volume changed");
             }
           });
           this.#playSounds();
@@ -114,8 +115,6 @@ export default class extends Controller {
   }
 
   changeVolume(e) {
-    console.log(e.target);
-    console.log(e.target.dataset.sound);
     this.formTargets.forEach((form) => {
       if (form.dataset.sound == e.target.dataset.sound) {
         console.log(form);
