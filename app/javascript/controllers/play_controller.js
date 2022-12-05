@@ -12,20 +12,39 @@ export default class extends Controller {
   }
 
   connect() {
-    this.#getSoundFiles().forEach((sound) => {
-      let sfx = new Howl({
-        src: sound.file,
-        volume: sound.volume,
-        loop: true,
-        onend: function() {
-          // console.log("Stopped");
-        }
-      })
-      sfx.play();
-    });
+    this.#playSounds();
 
   }
 
+  #playSounds() {
+    if (this.playingSounds != undefined) {
+      this.playingSounds.forEach((howler) => {
+        this.#getSoundFiles().forEach((sound) => {
+          if (howler._src == sound.file) {
+            howler.volume(sound.volume);
+          }
+        });
+        // console.log(sound._src);
+
+      });
+    } else {
+      this.playingSounds = [];
+      this.#getSoundFiles().forEach((sound) => {
+        let sfx = new Howl({
+          src: sound.file,
+          volume: sound.volume,
+          loop: true,
+          onend: function() {
+          }
+        });
+        this.playingSounds.push(sfx)
+        sfx.play();
+      });
+    }
+
+
+    console.log(this.playingSounds);
+  }
 
   playBgm() {
     let bgm = new Howl({
@@ -52,28 +71,53 @@ export default class extends Controller {
   send(e){
     e.preventDefault();
     console.log("FORM SUBMITTED");
-
+    console.log(e.target);
     // TODO: submit form with ajax
-    fetch(this.formTarget.ation, {
-      method: "PATCH",
+    console.log(e.target);
+    fetch(e.target.action, {
+      method: e.target.method,
       headers: { "Accept": "application/json" },
-      body: new FormData(this.formTarget)
+      body: new FormData(e.target)
     })
       .then(response => response.json())
-      .then((data) => { console.log(data);})
+      .then((data) => {
+        console.log(data);
+        if (data.successful) {
+          if (data.editForm) {
+            console.log("edit form!!");
+            e.target.outerHTML = data.editForm
+          }
+          this.soundTargets.forEach((sound) => {
+            if (sound.dataset.soundId == data.mix_sound.sound_id) {
+              sound.dataset.enabled = data.mix_sound.volume > 0 ? true : false;
+              sound.dataset.volume = data.mix_sound.volume;
+            }
+          });
+          this.#playSounds();
+        }
+      });
+  }
 
+  changeVolume(e) {
+    console.log(e.target);
+    console.log(e.target.dataset.sound);
+    this.formTargets.forEach((form) => {
+      if (form.dataset.sound == e.target.dataset.sound) {
+        console.log(form);
+        form.requestSubmit();
+      }
+    });
   }
 
   #getSoundFiles() {
     const array = [];
     this.soundTargets.forEach((element) => {
-      if (element.dataset.enabled == "true") {
         array.push({file: `${element.dataset.soundFile}.mp3`,
                     volume: element.dataset.volume / 10});
-      }
+
     });
 
-    // console.log(array);
+    console.log(array);
     return array;
   }
 }

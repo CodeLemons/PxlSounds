@@ -22,18 +22,9 @@ class MixesController < ApplicationController
   end
 
   def update
-    # @mix.update(mix_params)
+    @mix.update(mix_params)
 
-    # redirect_to edit_world_mix_path(@mix.world, @mix), notice: "Succesfully updated"
-    respond_to do |format|
-      if @mix.update(mix_params)
-        format.html { redirect_to edit_world_mix_path(@mix.world, @mix), notice: "Succesfully updated" }
-        format.json
-      else
-        format.html
-        format.json
-      end
-    end
+    redirect_to edit_world_mix_path(@mix.world, @mix), notice: "Succesfully updated"
   end
 
   def destroy
