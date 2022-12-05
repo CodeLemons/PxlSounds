@@ -30,22 +30,22 @@ export default class extends Controller {
     } else {
       this.playingSounds = [];
       this.#getSoundFiles().forEach((sound) => {
-        let sfx = new Howl({
-          src: sound.file,
-          volume: sound.volume,
-          loop: true,
-          onend: function() {
-          }
-        });
-        this.playingSounds.push(sfx)
-        sfx.play();
+      let sfx = new Howl({
+        src: sound.file,
+        volume: sound.volume,
+        loop: true,
+        onend: function() {
+        }
       });
-    }
-
-
-    console.log(this.playingSounds);
+      this.playingSounds.push(sfx)
+      sfx.play();
+    });
   }
-  
+
+
+  console.log(this.playingSounds);
+  }
+
   playBgm() {
     let bgm = new Howl({
       src: `${this.bgsmValue}.mp3`,
