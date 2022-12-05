@@ -9,10 +9,15 @@ class MixSoundsController < ApplicationController
     @mix_sound = MixSound.new(mix_sound_params)
     @mix = Mix.find(params[:mix_id])
     @mix_sound.mix = @mix
-    if @mix_sound.save
-      redirect_to edit_world_mix_path(@mix.world, @mix), notice: "Succesfully created"
-    else
-      render 'mixes/new', status: :unprocessable_entity
+    respond_to do |format|
+      if @mix_sound.save
+        format.html { redirect_to edit_world_mix_path(@mix.world, @mix), notice: "Succesfully created" }
+        format.json
+      else
+        format.html { render 'mixes/new', status: :unprocessable_entity }
+        format.json
+      end
+
     end
   end
 
@@ -20,9 +25,16 @@ class MixSoundsController < ApplicationController
   end
 
   def update
-    @mix_sound.update(mix_sound_params)
+    respond_to do |format|
+      if @mix_sound.update(mix_sound_params)
+        format.html { redirect_to mix_sound_path(@mix_sound) }
+        format.json
+      else
+        format.html { render :edit }
+        format.json
+      end
+    end
 
-    redirect_to mix_sound_path(@mix_sound)
   end
 
   def destroy
