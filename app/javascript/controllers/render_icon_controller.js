@@ -30,6 +30,9 @@ export default class extends Controller {
     console.log(imageContainer)
 
     // change the name of the mix selected
+    // replace class hidden with mix-overlay
+    // element.classList.remove("hidden")
+    // element.classList.add("mix-overlay")
 
   }
 }
