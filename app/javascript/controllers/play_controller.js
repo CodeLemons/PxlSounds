@@ -21,11 +21,11 @@ export default class extends Controller {
           console.log("Stopped");
         }
       })
+
       sfx.play();
     });
 
   }
-
 
   playBgm() {
     let bgm = new Howl({
@@ -40,6 +40,7 @@ export default class extends Controller {
   }
 
   toggleSound(e) {
+    console.log(this.#getSoundFiles())
     let sfx = new Howl({
       src: this.#getSoundFiles(),
       // loop: true,
@@ -47,6 +48,12 @@ export default class extends Controller {
         console.log("Stopped");
       }
     })
+
+    if (sfx.playing()) {
+      sfx.pause()
+    } else {
+      sfx.play()
+    }
   }
 
   #getSoundFiles() {
