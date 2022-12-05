@@ -3,12 +3,12 @@
                         data: {play_target: "form", action: "submit->play#send", sound: sound.id} do |f| %>
   <%= f.input :sound_id, input_html: { class: 'input-box' }, label: false %>
   <%= f.input :volume, input_html: { min: 0, max: 5, step: 0.01, data: { action: "change->play#changeVolume", sound: sound.id }, value: @mix.mix_sounds.find_by(sound_id: sound.id).volume }, label: false, as: "range" %>
-  <%#= f.submit, class: "submit-button" %>
+
   <% if @mix.mix_sounds.find_by(sound_id: sound.id).volume.zero? %>
-    <i class="fa-solid fa-volume-xmark"></i>
+    <i class="fa-solid fa-volume-xmark text-danger"></i>
   <% elsif @mix.mix_sounds.find_by(sound_id: sound.id).volume < 2 %>
-    <i class="fa-solid fa-volume-low"></i>
+    <i class="fa-solid fa-volume-low text-warning"></i>
   <% else %>
-    <i class="fa-solid fa-volume-high"></i>
+    <i class="fa-solid fa-volume-high text-success"></i>
   <% end %>
 <% end %>
