@@ -18,6 +18,18 @@ export default class extends Controller {
     // this.saveTarget.classList.remove("hidden")
   }
 
+  update(e) {
+    e.preventDefault();
+    console.log("Hello");
+    fetch(e.target.action, {
+      method: e.target.method,
+      headers: { "Accept": "application/json" },
+      body: new FormData(e.target)
+    })
+      .then(response => response.json())
+      .then((data) => {console.log(data);})
+  }
+
   // soundButton() {
   //   this.soundTarget.classList.toggle('show')
   // }
