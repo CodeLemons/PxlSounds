@@ -28,18 +28,14 @@
     </div>
   </div>
 
-  <div class="big-save"  data-controller="save" >
-    <button class="save-button" data-action="click->save#saveButton" data-save-target="save">
+  <div class="big-save" data-controller="save" >
+    <button class="save-button" data-action="click->save#saveButton">
       save
     </button>
-    <div class="my-input" data-save-target="form">
-      <%= simple_form_for [@mix], data: { action: "submit->save#update" } do |f| %>
-        <div>
-          <%= f.input :name, label: false %>
-        </div>
-        <div>
-          <%= f.button :submit %>
-        </div>
+    <div class="my-input" data-save-target="save">
+      <%= simple_form_for @mix, data: { action: "submit->save#update" }, class: "input-box" do |f| %>
+          <%= f.input :name, label: false, data: { save_target: "form", class: "hide-input"} %>
+          <%= f.button :submit, class: "submit-button" %>
       <% end %>
     </div>
   </div>

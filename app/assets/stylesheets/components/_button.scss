@@ -1,25 +1,30 @@
 .big-save {
   position: absolute;
+  display: flex;
   left: 20px;
   top: 20px;
-  overflow: hidden;
-  display: inline-block;
-  // vertical-align: middle;
 
-  .my-input {
-    transform: translateX(-100%);
-    opacity: 0;
-    transition: opacity .25s, transform .25s;
-
-    .button {
-      display: none;
-    }
+  .save-button {
+    height: 38.67px;
+    margin-right: 5px;
   }
+}
 
-  .my-input.show {
-    transform: translateX(0);
-    opacity: 1;
-  }
+.my-input {
+  display: flex;
+  transform: scaleX(0);
+  opacity: 0;
+  transition: opacity .25s, transform .25s;
+  transform-origin: 0 0;
+}
+
+.my-input.show {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.hide-input {
+  display: none;
 }
 
 // .save-button-gone {
