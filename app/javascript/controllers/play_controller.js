@@ -12,10 +12,34 @@ export default class extends Controller {
   }
 
   connect() {
-    this.playBgm();
+    // this.playBgm();
     this.#playSounds();
 
+    this.bgm = new Howl({
+      src: `${this.bgsmValue}.mp3`,
+      loop: true,
+      volume: 0.25,
+      autoplay: true,
+    });
+
   }
+
+  pauseResume() {
+    if (this.bgm.playing()) {
+      this.bgm.pause();
+      this.bgmTarget.classList.remove("fa-solid", "fa-volume-high", "text-success",  "fa-2xl", "bgm-button");
+      this.bgmTarget.classList.add("fa-solid", "fa-volume-xmark", "text-danger", "fa-2xl", "bgm-button");
+
+      console.log("Pausing");
+    } else {
+      this.bgm.play();
+      this.bgmTarget.classList.remove("fa-solid", "fa-volume-xmark", "text-danger", "fa-2xl", "bgm-button");
+      this.bgmTarget.classList.add("fa-solid", "fa-volume-high", "text-success", "fa-2xl", "bgm-button");
+      // this.bgmTarget.classList.replace("fa-solid fa-volume-high.bgm-button", "fa-solid fa-volume-xmark.bgm-button")
+      console.log("Playing");
+    }
+  }
+
 
   disconnect() {
     Howler.unload();
@@ -52,19 +76,19 @@ export default class extends Controller {
   console.log(this.playingSounds);
   }
 
-  playBgm() {
-    let bgm = new Howl({
-      src: `${this.bgsmValue}.mp3`,
-      loop: true,
-      volume: 0.3,
-      autoplay: true,
-      onend: function() {
-        // console.log("Stopped bgm");
-      }
-    })
-    bgm.play()
-    console.log("PLAYING BGM");
-  }
+  // playBgm() {
+  //   let bgm = new Howl({
+  //     src: `${this.bgsmValue}.mp3`,
+  //     loop: true,
+  //     volume: 0.3,
+  //     autoplay: true,
+  //     onend: function() {
+  //       // console.log("Stopped bgm");
+  //     }
+  //   })
+  //   bgm.play()
+  //   console.log("PLAYING BGM");
+  // }
 
   toggleSound(e) {
     console.log(this.#getSoundFiles())
@@ -76,11 +100,6 @@ export default class extends Controller {
       }
     })
 
-    if (sfx.playing()) {
-      sfx.pause()
-    } else {
-      sfx.play()
-    }
   }
 
   send(e){
