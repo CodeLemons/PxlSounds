@@ -27,13 +27,13 @@ export default class extends Controller {
   pauseResume() {
     if (this.bgm.playing()) {
       this.bgm.pause();
-      this.speakerTarget.classList.remove("fa-solid", "fa-volume-high", "text-success");
-      this.speakerTarget.classList.add("fa-solid", "fa-volume-xmark", "text-danger");
+      this.speakerTarget.classList.remove("fa-solid", "fa-pause");
+      this.speakerTarget.classList.add("fa-solid", "fa-play");
       console.log("Pausing");
     } else {
       this.bgm.play();
-      this.speakerTarget.classList.remove("fa-solid", "fa-volume-xmark", "text-danger");
-      this.speakerTarget.classList.add("fa-solid", "fa-volume-high", "text-success");
+      this.speakerTarget.classList.remove("fa-solid", "fa-play");
+      this.speakerTarget.classList.add("fa-solid", "fa-pause");
       console.log("Playing");
     }
   }
