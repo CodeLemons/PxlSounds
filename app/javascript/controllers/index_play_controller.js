@@ -55,7 +55,7 @@ export default class extends Controller {
             }
           });
 
-          this.sfx.play();
+            this.sfx.play();
         });
       }
 
