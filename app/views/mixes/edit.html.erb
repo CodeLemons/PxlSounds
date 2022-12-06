@@ -14,14 +14,14 @@
           <% else %>
             <%= simple_form_for [@mix, @mix_sound], defaults: { input_html: { class: 'form-box-volume' } }, data: { sound: sound.id, action: "submit->play#send", play_target: "form"} do |f| %>
               <%= f.input :sound_id, input_html: { value: sound.id, class: 'input-box' }, label: false %>
-              <%= f.input :volume, input_html: { min: 0, max: 5, value: 0, step: 0.01, data: { action: "change->play#changeVolume", sound: sound.id } }, label: false, as: "range", class: "range" %>
+              <%= f.input :volume, input_html: { min: 0, max: 5, value: 0, step: 0.01, data: { action: "change->play#changeVolume", sound: sound.id }},  label: false, as: "range", class: "range" %>
               <%#= f.submit, class: "submit-button" %>
               <i class="fa-solid fa-volume-xmark text-danger range"></i>
             <% end %>
           <% end %>
       </div>
-      <% end %>
-      <div class="icon-back">
+    <% end %>
+    <div class="icon-back">
       <%= link_to worlds_path do %>
         <i class="fa-solid fa-arrow-left"></i>
       <% end %>

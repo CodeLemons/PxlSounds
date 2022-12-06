@@ -10,6 +10,9 @@ application.register("background", BackgroundController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import IndexPlayController from "./index_play_controller"
+application.register("index-play", IndexPlayController)
+
 import PlayController from "./play_controller"
 application.register("play", PlayController)
 

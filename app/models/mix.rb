@@ -8,7 +8,6 @@ class Mix < ApplicationRecord
 
   validates :name, presence: true
 
-
   def get_mix_sounds
     mix_array = []
     mix_sounds.each do |m|

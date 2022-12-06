@@ -40,5 +40,6 @@ export default class extends Controller {
     console.log(audioControl)
     audioControl.classList.remove("hidden")
     audioControl.classList.add("mix-overlay")
+
   }
 }
