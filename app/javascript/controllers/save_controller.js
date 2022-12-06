@@ -8,7 +8,7 @@ export default class extends Controller {
   }
 
   saveButton() {
-    this.formTarget.classList.toggle('show')
+    this.saveTarget.classList.toggle("show")
     // this.formTarget.classList.remove("hidden")
     // this.saveTarget.classList.add("hidden")
   }

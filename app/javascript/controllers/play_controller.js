@@ -126,15 +126,17 @@ export default class extends Controller {
               sound.dataset.enabled = data.mix_sound.volume > 0 ? true : false;
               sound.dataset.volume = data.mix_sound.volume;
               console.log("Volume changed");
+              console.log(e.target)
+              console.log(e.target.children[4])
               if (sound.dataset.volume == 0) {
-                e.target.children[4].classList.remove("fa-solid", "fa-volume-xmark", "text-danger", "fa-volume-low", "text-warning", "fa-volume-high", "text-success")
-                e.target.children[4].classList.add("fa-solid", "fa-volume-xmark", "text-danger")
+                e.target.querySelector("i").classList.remove("fa-solid", "fa-volume-xmark", "text-danger", "fa-volume-low", "text-warning", "fa-volume-high", "text-success")
+                e.target.querySelector("i").classList.add("fa-solid", "fa-volume-xmark", "text-danger")
               } else if (sound.dataset.volume < 3) {
-                e.target.children[4].classList.remove("fa-solid", "fa-volume-xmark", "text-danger", "fa-volume-low", "text-warning", "fa-volume-high", "text-success")
-                e.target.children[4].classList.add("fa-solid", "fa-volume-low", "text-warning")
+                e.target.querySelector("i").classList.remove("fa-solid", "fa-volume-xmark", "text-danger", "fa-volume-low", "text-warning", "fa-volume-high", "text-success")
+                e.target.querySelector("i").classList.add("fa-solid", "fa-volume-low", "text-warning")
               } else {
-                e.target.children[4].classList.remove("fa-solid", "fa-volume-xmark", "text-danger", "fa-volume-low", "text-warning", "fa-volume-high", "text-success")
-                e.target.children[4].classList.add("fa-solid", "fa-volume-high", "text-success")
+                e.target.querySelector("i").classList.remove("fa-solid", "fa-volume-xmark", "text-danger", "fa-volume-low", "text-warning", "fa-volume-high", "text-success")
+                e.target.querySelector("i").classList.add("fa-solid", "fa-volume-high", "text-success")
               }
             }
           });
