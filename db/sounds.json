@@ -78,15 +78,6 @@
       },
 
       {
-        "name": "grass-1",
-        "file_url": "grass-wind.mp3",
-        "width": 13,
-        "height": 9,
-        "left": 21,
-        "top": 79
-      },
-
-      {
         "name": "grass-2",
         "file_url": "grass-wind.mp3",
         "width": 17,
@@ -128,15 +119,6 @@
         "width": 49,
         "height": 54,
         "left": 5,
-        "top": 9
-      },
-
-      {
-        "name": "rain-window-2",
-        "file_url": "rain-window.mp3",
-        "width": 17,
-        "height": 26,
-        "left": 54,
         "top": 9
       },
 

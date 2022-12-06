@@ -13,6 +13,9 @@ application.register("hello", HelloController)
 import HomepageBgmController from "./homepage_bgm_controller"
 application.register("homepage-bgm", HomepageBgmController)
 
+import IndexPlayController from "./index_play_controller"
+application.register("index-play", IndexPlayController)
+
 import PlayController from "./play_controller"
 application.register("play", PlayController)
 
