@@ -34,7 +34,7 @@
     </button>
     <div class="my-input" data-save-target="save">
       <%= simple_form_for @mix, data: { action: "submit->save#update" }, class: "input-box" do |f| %>
-          <%= f.input :name, label: false, data: { save_target: "form", class: "hide-input"} %>
+          <%= f.input :name, label: false, data: { save_target: "form"} %>
           <%= f.button :submit, class: "submit-button" %>
       <% end %>
     </div>

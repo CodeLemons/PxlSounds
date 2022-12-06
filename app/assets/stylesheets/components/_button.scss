@@ -23,8 +23,10 @@
   opacity: 1;
 }
 
-.hide-input {
-  display: none;
+.my-input {
+  .input {
+    display: none;
+  }
 }
 
 // .save-button-gone {
