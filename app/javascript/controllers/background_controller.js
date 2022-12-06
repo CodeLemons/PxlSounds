@@ -19,6 +19,7 @@ export default class extends Controller {
       src: `${this.bgmValue}.mp3`,
       loop: true,
       volume: 0.3,
+      preload: true,
       autoplay: true,
       onend: function() {
         // console.log("Stopped bgm");
