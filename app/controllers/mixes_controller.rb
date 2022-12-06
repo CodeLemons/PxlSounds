@@ -1,5 +1,5 @@
 class MixesController < ApplicationController
-  before_action :set_mix, only: [:edit, :update]
+  before_action :set_mix, only: [:edit, :update, :destroy]
   before_action :set_world, only: [:edit, :create, :new]
 
   def new
@@ -35,7 +35,6 @@ class MixesController < ApplicationController
 
   def destroy
     @mix.destroy
-
     redirect_to worlds_path, status: :see_other
   end
 

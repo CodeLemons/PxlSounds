@@ -4,6 +4,7 @@ class WorldsController < ApplicationController
   end
 
   def index
+    # @mix = Mix.find(params)
     @worlds = World.all
     @mixes = current_user.mixes
   end
