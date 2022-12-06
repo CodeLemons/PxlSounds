@@ -14,7 +14,7 @@
               <div class="world-name">
                 <p><%= mix.world.name %></p>
               </div>
-              <div class="play-button" data-controller="render-icon" data-render-icon-image-value="<%= cl_image_path mix.world.image.key %>" data-action="click->render-icon#renderOnClick">
+              <div class="play-button" data-controller="render-icon" data-render-icon-image-value="<%= cl_image_path mix.world.image.key %>" data-render-icon-name-value="<%= mix.name %>" data-action="click->render-icon#renderOnClick">
                 <i class="fa-solid fa-circle-play", data-render-icon-target="button"></i>
               </div>
             </div>
@@ -38,7 +38,7 @@
           <i class="fa-solid fa-circle-play"></i>
         </div>
         <div class="mix-content">
-          <h3>wow</h3>
+          <h3 class="mix-name-display">wow</h3>
           <input type="range" id="volume" name="volume" min="0" max="10">
         </div>
       </div>
