@@ -4,6 +4,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static values = {
     image: String,
+    name: String
   }
   static targets = ["button", "bgi"]
 
@@ -25,14 +26,19 @@ export default class extends Controller {
     const imageContainer = document.querySelector('.image-container');
     console.log(imageContainer)
 
-    // change the attribute with the new url
+    // Change the attribute with the new url
     imageContainer.style.backgroundImage = `url(${new_background_image})`
     console.log(imageContainer)
 
-    // change the name of the mix selected
-    // replace class hidden with mix-overlay
-    // element.classList.remove("hidden")
-    // element.classList.add("mix-overlay")
+    // Change the name of the mix selected
+    const mixName = document.querySelector('.mix-name-display')
+    // console.log(mixName)
+    mixName.innerHTML = this.nameValue
 
+    // Replace class hidden with mix-overlay to show audio control
+    const audioControl = document.querySelector('.hidden')
+    console.log(audioControl)
+    audioControl.classList.remove("hidden")
+    audioControl.classList.add("mix-overlay")
   }
 }
