@@ -8,6 +8,11 @@
         <div class="mix-cards" style="overflow-y: scroll; height: 260px;">
           <% @mixes.each do |mix| %>
             <div class="mix-card" data-index-play-target="mix" data-sound-value="<%= mix.get_mix_sounds.to_json %>">
+              <div>
+                  <%= link_to mix_path(mix), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                      <i class="fa-solid fa-xmark" style = "position: relative; bottom: 30px; left: 10px; color:white;"></i>
+                    <% end %>
+              </div>
               <div class="mix-name">
                 <%= link_to mix.name, edit_world_mix_path(mix.world, mix) %>
               </div>
