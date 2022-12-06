@@ -10,11 +10,11 @@ application.register("background", BackgroundController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import HomepageBgmController from "./homepage_bgm_controller"
+application.register("homepage-bgm", HomepageBgmController)
+
 import PlayController from "./play_controller"
 application.register("play", PlayController)
-
-// import RandomDisplayController from "./random_display_controller"
-// application.register("random-display", RandomDisplayController)
 
 import RenderIconController from "./render_icon_controller"
 application.register("render-icon", RenderIconController)
