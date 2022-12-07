@@ -27,10 +27,12 @@
         </div>
         <div class="cards-border"></div>
       </div>
+      <% @images = [] %>
       <% @worlds.each do |world| %>
         <%= link_to world_path(world) do %>
           <div class="worlds-container">
             <div class="world-card" style="background-image: url('<%= cl_image_path( world.image.key ) %>');">
+              <% @images.push(image: cl_image_path(world.image.key)) %>
               <h1><%= world.name %></h1>
             </div>
           </div>
@@ -39,9 +41,9 @@
     </div>
     <div class="image-container" style="background-image: url('<%= cl_image_path @worlds.sample.image.key %>')">
       <div class="hidden">
-        <div class="mix-play">
-          <i class="fa-solid fa-circle-play mouse-over" style="padding-right: 10px;" data-action="click->index-play#playMix"></i>
-          <i class="fa-solid fa-circle-stop mouse-over" data-action="click->index-play#stopMix"></i>
+        <div class="mix-play" style="position: relative;">
+          <i class="fa-solid fa-circle-play mouse-over" data-index-play-target="play" style="position: absolute;" data-action="click->index-play#playMix"></i>
+          <i class="fa-solid fa-circle-stop mouse-over d-none" data-index-play-target="stop" style="position: absolute;" data-action="click->index-play#stopMix"></i>
         </div>
         <div class="mix-content">
           <h3 class="mix-name-display"></h3>

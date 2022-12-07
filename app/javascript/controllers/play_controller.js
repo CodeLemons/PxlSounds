@@ -6,7 +6,7 @@ import {Howl} from 'howler';
 
 // Connects to data-controller="play"
 export default class extends Controller {
-  static targets = ["sound", "bgm", "form", "icon"]
+  static targets = ["sound", "bgm", "form", "icon", "bgmvol"]
   static values = {
     bgsm: String
   }
@@ -22,6 +22,11 @@ export default class extends Controller {
       autoplay: true,
     });
 
+  }
+
+  change() {
+    // console.log(this.bgmvolTarget.value);
+    this.bgm.volume(this.bgmvolTarget.value);
   }
 
   pauseResume() {

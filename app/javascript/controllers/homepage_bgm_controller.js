@@ -15,6 +15,20 @@ export default class extends Controller {
       src: `${this.bgsmValue}.mp3`,
       loop: true,
       volume: 0.1,
+      autoplay: true,
+      onplayerror: function() {
+        this.bgm.once('unlock', function() {
+          let interval = setInterval(function() {
+            let currentVolume = this.bgm.volume();
+            if (currentVolume < 0.3) {
+              this.bgm.volume(currentVolume + 0.01);
+            } else {
+              clearInterval(interval);
+            }
+          }, 200);
+          this.bgm.play();
+        });
+      }
     })
   }
 
