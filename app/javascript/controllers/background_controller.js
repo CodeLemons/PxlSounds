@@ -6,6 +6,7 @@ export default class extends Controller {
     bgm: String
   }
   connect() {
+    console.log("HELLO FROM BACKGROUND");
     this.#playBgm();
   }
 

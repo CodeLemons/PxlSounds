@@ -37,7 +37,7 @@ export default class extends Controller {
 
     // Replace class hidden with mix-overlay to show audio control
     const audioControl = document.querySelector('.hidden')
-    console.log(audioControl)
+    // console.log(audioControl)
     audioControl.classList.remove("hidden")
     audioControl.classList.add("mix-overlay")
 

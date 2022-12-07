@@ -3,7 +3,7 @@ import { Howl } from "howler";
 
 // Connects to data-controller="index-play"
 export default class extends Controller {
-  static targets = ["mix", "button", "volume"]
+  static targets = ["mix", "button", "volume", "play", "stop"]
   static values = {
     sound: Array,
   }
@@ -24,7 +24,11 @@ export default class extends Controller {
     console.log(this.sfx)
     if (this.sfx != undefined) {
       if (this.sfx.playing()) {
-        Howler.unload()
+        Howler.unload();
+        if (this.playTarget.classList.contains("d-none")) {
+          this.playTarget.classList.remove("d-none");
+          this.stopTarget.classList.add("d-none");
+        }
       }
     }
 
@@ -46,6 +50,8 @@ export default class extends Controller {
 
   playMix() {
     // console.log(this.mixTargets)
+    this.stopTarget.classList.remove("d-none");
+    this.playTarget.classList.add("d-none");
     Howler.unload();
     this.volumeTarget.value = 0.5;
     Howler.volume(0.5);
@@ -94,6 +100,8 @@ export default class extends Controller {
   }
 
   stopMix() {
+    this.playTarget.classList.remove("d-none");
+    this.stopTarget.classList.add("d-none");
     // console.log(this.sfx.pause());
     Howler.unload();
   }
