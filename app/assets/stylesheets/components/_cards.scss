@@ -10,6 +10,7 @@
     text-align: center;
     justify-content: flex-end;
     align-items: center;
+    position: relative
 
     h3 {
       margin-top: 20px;
@@ -45,6 +46,11 @@
           p {
             margin: 0;
           }
+        }
+
+        .mix-play {
+          display: flex;
+          justify-content: center;
         }
 
         .mix-name {
@@ -104,5 +110,9 @@
     h1:hover {
       color: rgb(99, 99, 99);
     }
+  }
+
+  .world-card:hover {
+    transform: scale(1.01);
   }
 }
