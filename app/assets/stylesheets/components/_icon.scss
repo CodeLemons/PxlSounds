@@ -9,6 +9,19 @@
   }
 }
 
+.icon-back-homepage {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+
+  i {
+    font-size: 30px;
+    color: white;
+  }
+}
+
+
+
 .mouse-over {
   opacity: 0.2;
   transition: transform 0.2s ease-in;
