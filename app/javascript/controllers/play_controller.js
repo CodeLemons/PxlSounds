@@ -69,8 +69,7 @@ export default class extends Controller {
         src: sound.file,
         volume: sound.volume,
         loop: true,
-        onend: function() {
-        }
+        autoplay: true,
       });
       this.playingSounds.push(sfx)
       sfx.play();
