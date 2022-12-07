@@ -24,7 +24,11 @@ export default class extends Controller {
     console.log(this.sfx)
     if (this.sfx != undefined) {
       if (this.sfx.playing()) {
-        Howler.unload()
+        Howler.unload();
+        if (this.playTarget.classList.contains("d-none")) {
+          this.playTarget.classList.remove("d-none");
+          this.stopTarget.classList.add("d-none");
+        }
       }
     }
 
