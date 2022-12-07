@@ -11,7 +11,7 @@ class MixesController < ApplicationController
     @mix.world = @world
     @mix.user = current_user
     if @mix.save
-      redirect_to edit_world_mix_path(@world, @mix), notice: "Succesfully created"
+      redirect_to edit_world_mix_path(@world, @mix)
     else
       render 'new', status: :unprocessable_entity
     end
