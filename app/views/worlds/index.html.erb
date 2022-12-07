@@ -20,7 +20,7 @@
                 <p><%= mix.world.name %></p>
               </div>
               <div class="play-button" data-controller="render-icon" data-index-play-target="button" data-render-icon-image-value="<%= cl_image_path(mix.world.image.key, class: "cloudinary-video") %>" data-render-icon-name-value="<%= mix.name %>" data-action="click->index-play#chooseMix index-play:showMix->render-icon#renderOnClick">
-                <i class="fa-solid fa-circle-play" data-render-icon-target="button"></i>
+                <i class="fa-solid fa-expand" style="cursor: pointer;" data-render-icon-target="button"></i>
               </div>
             </div>
           <% end %>
@@ -43,7 +43,6 @@
         <div class="mix-play">
           <i class="fa-solid fa-circle-play mouse-over" style="padding-right: 10px;" data-action="click->index-play#playMix"></i>
           <i class="fa-solid fa-circle-stop mouse-over" data-action="click->index-play#stopMix"></i>
-
         </div>
         <div class="mix-content">
           <h3 class="mix-name-display"></h3>

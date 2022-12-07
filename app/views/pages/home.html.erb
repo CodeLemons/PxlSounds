@@ -2,7 +2,7 @@
 <!-- <img style="width: 100vw; heigth: 100vh;" src="<%= cl_image_tag @world.image.key %>" alt=""> -->
 
 <%= cl_image_tag @world.image.key, class: "src" %>
-<div class="main-container">
+<div class="main-container" data-controller="homepage-bgm" data-homepage-bgm-bgsm-value="<%= cl_video_path(@world.bgm.key, resource_type: "video")%>">
   <%= render "shared/navbar" %>
   <div class="description-container">
     <div class=description>
@@ -12,5 +12,8 @@
       <p style="color: #3772FF; text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);">environment you want!</p>
       <p style="font-size: 20px;"> Create your relaxing environment by mixing different sounds from different worlds!  </p>
     </div>
+  </div>
+  <div class="icon-back">
+    <i class="fa-solid fa-play" data-homepage-bgm-target="speaker" data-action="click->homepage-bgm#pauseResume"></i>
   </div>
 </div>
