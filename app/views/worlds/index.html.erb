@@ -9,9 +9,9 @@
           <% @mixes.each do |mix| %>
             <div class="mix-card" data-index-play-target="mix" data-bgm-value="<%= cl_video_path(mix.world.bgm.key, resource_type: "video") %>" data-sound-value="<%= mix.get_mix_sounds.to_json %>">
               <div>
-                  <%= link_to mix_path(mix), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-                      <i class="fa-solid fa-xmark text-danger fa-xl" style = "position: relative; bottom: 4px; left: 20px; color:white;"></i>
-                    <% end %>
+                <%= link_to mix_path(mix), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                  <i class="fa-solid fa-xmark text-danger fa-xl" style = "position: relative; bottom: 4px; left: 20px;"></i>
+                <% end %>
               </div>
               <div class="mix-name">
                 <%= link_to mix.name, edit_world_mix_path(mix.world, mix) %>
@@ -20,7 +20,7 @@
                 <p><%= mix.world.name %></p>
               </div>
               <div class="play-button" data-controller="render-icon" data-index-play-target="button" data-render-icon-image-value="<%= cl_image_path(mix.world.image.key, class: "cloudinary-video") %>" data-render-icon-name-value="<%= mix.name %>" data-action="click->index-play#chooseMix index-play:showMix->render-icon#renderOnClick">
-                <i class="fa-solid fa-expand" style="cursor: pointer;" data-render-icon-target="button"></i>
+                <i class="fa-solid fa-chevron-right" style="cursor: pointer;" data-render-icon-target="button"></i>
               </div>
             </div>
           <% end %>
