@@ -16,6 +16,7 @@
   align-items: flex-start;
   box-shadow: none;
   text-align: center;
+  transition: all 0.1s ease-out;
 
 
   .form-control {
@@ -28,6 +29,7 @@
 
   .is-valid {
     background-image: none;
+
   }
 
   button {
@@ -36,11 +38,14 @@
     color: #38E54D;
     text-shadow: 1px 1px 25px rgba(0, 0, 0, 0.5);
     font-size: 35px;
+
   }
 }
 
 .sound-form:hover {
   box-shadow: inset 1px 1px 15px gold;
+  transition: all 0.1s ease-in;
+
 }
 
 .form {

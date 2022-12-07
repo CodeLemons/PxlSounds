@@ -9,8 +9,15 @@ export default class extends Controller {
   }
 
   connect() {
-    this.volumeTarget.value = this.volumeTarget.value
+    this.volumeTarget.value = this.volumeTarget.value;
+    this.audioContext = new AudioContext();
   }
+
+  disconnect() {
+    Howler.unload();
+    Howler.volume(1);
+  }
+
 
   chooseMix(e) {
     e.preventDefault()
@@ -39,11 +46,14 @@ export default class extends Controller {
 
   playMix() {
     // console.log(this.mixTargets)
-
+    Howler.unload();
+    this.volumeTarget.value = 0.5;
+    Howler.volume(0.5);
     this.mixTargets.forEach((object) => {
       console.log(object.dataset.playing)
       if (object.dataset.playing == "true"){
         console.log(object.dataset.soundValue)
+        console.log(object.dataset.bgmValue);
         let parsed_array = JSON.parse(object.dataset.soundValue)
         parsed_array.forEach(sound => {
            this.sfx = new Howl({
@@ -54,13 +64,38 @@ export default class extends Controller {
 
             }
           });
-
+          this.sfx.volume(0.3);
           this.sfx.play();
         });
+        let bgm = new Howl({
+          src: `${object.dataset.bgmValue}.mp3`,
+          volume: 0,
+          loop: true,
+        })
+
+        // let tempVolume = this.bgm.volume();
+        // this.bgm.seek(30);
+        // this.bgm.fade(2, "in");
+        bgm.seek(Math.floor(Math.random() * (60 - 30 + 1)) + 30);
+        let interval = setInterval(function() {
+          let currentVolume = bgm.volume();
+          if (currentVolume < 0.3) {
+            bgm.volume(currentVolume + 0.01);
+          } else {
+            clearInterval(interval);
+          }
+        }, 200);
+        // bgm.volume(0.3)
+        bgm.play();
       }
 
     })
 
+  }
+
+  stopMix() {
+    // console.log(this.sfx.pause());
+    Howler.unload();
   }
 
   change() {

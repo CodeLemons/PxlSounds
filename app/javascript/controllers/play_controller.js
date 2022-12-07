@@ -73,7 +73,8 @@ export default class extends Controller {
   }
 
 
-  console.log(this.playingSounds);
+    // console.log(this.playingSounds);
+    // return sfx.play();
   }
 
   // playBgm() {

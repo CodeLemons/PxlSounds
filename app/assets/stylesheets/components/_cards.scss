@@ -83,6 +83,7 @@
   }
 
   .world-card {
+    transition: transform 0.2s ease-in;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -105,4 +106,8 @@
       color: rgb(99, 99, 99);
     }
   }
+}
+
+.worlds-container:hover {
+  transform: scale(1.03);
 }
