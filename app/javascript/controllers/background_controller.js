@@ -24,7 +24,7 @@ export default class extends Controller {
         // console.log("Stopped bgm");
       }
     })
-    bgm.seek(Math.floor(Math.random() * (60 - 30 + 1)) + 30);
+    // bgm.seek(Math.floor(Math.random() * (60 - 30 + 1)) + 30);
     let interval = setInterval(function() {
       let currentVolume = bgm.volume();
       if (currentVolume < 0.4) {
