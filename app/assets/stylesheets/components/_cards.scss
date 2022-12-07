@@ -89,6 +89,7 @@
   }
 
   .world-card {
+    // transition: transform 0.2s ease-in;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,3 +117,7 @@
     transform: scale(1.01);
   }
 }
+
+// .worlds-container:hover {
+//   transform: scale(1.03);
+// }

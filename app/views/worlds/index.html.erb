@@ -7,10 +7,10 @@
         <div class="cards-border"></div>
         <div class="mix-cards" style="overflow-y: scroll; height: 260px;">
           <% @mixes.each do |mix| %>
-            <div class="mix-card" data-index-play-target="mix" data-sound-value="<%= mix.get_mix_sounds.to_json %>">
+            <div class="mix-card" data-index-play-target="mix" data-bgm-value="<%= cl_video_path(mix.world.bgm.key, resource_type: "video") %>" data-sound-value="<%= mix.get_mix_sounds.to_json %>">
               <div>
                 <%= link_to mix_path(mix), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-                  <i class="fa-solid fa-xmark text-danger" style = "position: relative; bottom: 5px; left: 10px; color:white;"></i>
+                  <i class="fa-solid fa-xmark text-danger fa-xl" style = "position: relative; bottom: 4px; left: 20px;"></i>
                 <% end %>
               </div>
               <div class="mix-name">
@@ -27,20 +27,22 @@
         </div>
         <div class="cards-border"></div>
       </div>
-      <div class="worlds-container">
+
         <% @worlds.each do |world| %>
           <%= link_to world_path(world) do %>
-            <div class="world-card" style="background-image: url('<%= cl_image_path( world.image.key ) %>');">
-              <h1><%= world.name %></h1>
+            <div class="worlds-container">
+              <div class="world-card" style="background-image: url('<%= cl_image_path( world.image.key ) %>');">
+                <h1><%= world.name %></h1>
+              </div>
             </div>
           <% end %>
         <% end %>
-      </div>
     </div>
     <div class="image-container" style="background-image: url('<%= cl_image_path @worlds.sample.image.key %>')">
       <div class="hidden">
         <div class="mix-play">
-          <i class="fa-solid fa-circle-play" style="cursor: pointer;" data-action="click->index-play#playMix"></i>
+          <i class="fa-solid fa-circle-play mouse-over" style="padding-right: 10px;" data-action="click->index-play#playMix"></i>
+          <i class="fa-solid fa-circle-stop mouse-over" data-action="click->index-play#stopMix"></i>
         </div>
         <div class="mix-content">
           <h3 class="mix-name-display"></h3>
