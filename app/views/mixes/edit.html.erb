@@ -30,17 +30,19 @@
 
   <div class="big-save" data-controller="save" >
     <button class="save-button" data-action="click->save#saveButton">
-      save
+      Edit
     </button>
     <div class="my-input" data-save-target="save">
-      <%= simple_form_for @mix, data: { action: "submit->save#update" }, class: "input-box" do |f| %>
-          <%= f.input :name, label: false, data: { save_target: "form"} %>
-          <%= f.button :submit, class: "submit-button" %>
+      <%= simple_form_for @mix, data: { action: "submit->save#update" }, html: {class: "d-flex"} do |f| %>
+        <%= f.input :name, label: false, data: { save_target: "form"} %>
+        <div>
+          <%= f.button :submit, class: "submit-button", value: "Update Name" %>
+        </div>
       <% end %>
     </div>
   </div>
     <i class="fa-solid fa-volume-high fa-2xl text-success bgm-button"
-            data-play-target="bgm"
-            data-action="click->play#pauseResume">
-            </i>
+      data-play-target="bgm"
+      data-action="click->play#pauseResume">
+    </i>
 </div>
