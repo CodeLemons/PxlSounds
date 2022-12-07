@@ -18,7 +18,7 @@ export default class extends Controller {
     this.bgm = new Howl({
       src: `${this.bgsmValue}.mp3`,
       loop: true,
-      volume: 0.15,
+      volume: this.bgmvolTarget.value,
       autoplay: true,
     });
 
