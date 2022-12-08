@@ -1,5 +1,5 @@
-meta_product_name: "Product Name"
-meta_title: "Product name - Product tagline"
-meta_description: "Relevant description"
-meta_image: "cover.png" # should exist in `app/assets/images/`
-twitter_account: "@product_twitter_account"   # required for Twitter Cards
+meta_product_name: "PxlSounds"
+meta_title: "PxlSounds - Explore"
+meta_description: "An app where you can create your own environment"
+meta_image: "card.png" # should exist in `app/assets/images/`
+twitter_account: ""   # required for Twitter Cards
