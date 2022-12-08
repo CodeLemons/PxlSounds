@@ -1,27 +1,37 @@
-<div class="navbar">
-  <%= link_to worlds_path do %>
-    <div class="logo">
-      <h1 style="color: #DF2935;">P</h1>
-      <h1 style="color: #FDCA40;">X</h1>
-      <h1 style="color: #3772FF">L</h1>
-      <h1 style="color: white">SOUNDS</h1>
-    </div>
-  <% end %>
-  <div class="navbar-drop">
-    <% if user_signed_in? %>
-      <li class="navbar-link"><%= link_to "Logout", destroy_user_session_path, class: "links", data: {turbo_method: :delete} %></li>
-    <% else %>
-      <li class="navbar-link"><%= link_to "Login", new_user_session_path, class: "links" %></li>
+<div class="navbar navbar-expand-sm navbar-lewagon">
+  <div class="container-fluid">
+    <%= link_to worlds_path do %>
+      <div class="logo">
+        <h1 style="color: #DF2935;">P</h1>
+        <h1 style="color: #FDCA40;">X</h1>
+        <h1 style="color: #3772FF">L</h1>
+        <h1 style="color: white">SOUNDS</h1>
+      </div>
     <% end %>
 
-    <%# Cloudinary %>
-    <% if user_signed_in? %>
-      <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key %>
-      <% else %>
-        <%= image_tag "Temp_logo.jpg" %>
-      <% end %>
-    <% end %>
-    <%# End of cloudinary %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item dropdown">
+          <% if user_signed_in? %>
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+              <%= image_tag "Temp_logo.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
+          <% end %>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <% if user_signed_in? %>
+              <%= link_to "Logout", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+            <% else %>
+              <%= link_to "Login", new_user_session_path, class: "dropdown-item" %>
+            <% end %>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

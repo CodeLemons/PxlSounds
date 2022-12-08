@@ -4,6 +4,13 @@
 <%= cl_image_tag @world.image.key, class: "src" %>
 <div class="main-container" data-controller="homepage-bgm" data-homepage-bgm-bgsm-value="<%= cl_video_path(@world.bgm.key, resource_type: "video")%>">
   <%= render "shared/navbar" %>
+  <div class="sign-in">
+    <% if !user_signed_in? %>
+      <button class="show-button">
+        <%= link_to "login", new_user_session_path %>
+      </button>
+    <% end %>
+  </div>
   <div class="description-container">
     <div class=description>
       <h1>Welcome!</h1>
