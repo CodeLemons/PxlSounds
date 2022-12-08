@@ -1,6 +1,6 @@
-<%# raise %>
-<!-- <img style="width: 100vw; heigth: 100vh;" src="<%= cl_image_tag @world.image.key %>" alt=""> -->
-
+<head>
+<title>PxlSounds - curate the environment you desire!</title>
+</head>
 <%= cl_image_tag @world.image.key, class: "src" %>
 <div class="main-container" data-controller="homepage-bgm" data-homepage-bgm-bgsm-value="<%= cl_video_path(@world.bgm.key, resource_type: "video")%>">
   <%= render "shared/navbar" %>
