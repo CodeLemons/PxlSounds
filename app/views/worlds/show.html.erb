@@ -1,3 +1,6 @@
+<head>
+<title><%= @world.name %></title>
+</head>
 <div class="show-container" data-controller="background" data-background-bgm-value="<%= cl_video_path(@world.bgm.key, resource_type: "video")%>">
 
   <%= cl_image_tag @world.image.key, class: "src" %>
