@@ -1,4 +1,6 @@
-# PxlSounds
+<p align="center">
+  <img width="567" height="67" src="app/assets/images/pxlsounds.png">
+</p>
 
 PxlSounds is a white-noise generator that helps people block distractions around them in order to focus on their tasks.
 
