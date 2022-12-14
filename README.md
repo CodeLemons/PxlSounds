@@ -12,9 +12,9 @@ In PxlSounds you can choose different worlds that have specific themes around th
 
 Contributors names and contact info
 
-Ali-Hamza Asam
-Tomas Bui Lai
-Lucas Brown
+Ali-Hamza Asam <br />
+Tomas Bui Lai <br />
+Lucas Brown <br />
 Juan Manuel Mendoza
 
 ## Version History
