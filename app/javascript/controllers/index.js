@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AddFormController from "./add_form_controller"
+application.register("add-form", AddFormController)
+
 import BackgroundController from "./background_controller"
 application.register("background", BackgroundController)
 
@@ -24,3 +27,6 @@ application.register("render-icon", RenderIconController)
 
 import SaveController from "./save_controller"
 application.register("save", SaveController)
+
+import SubmitSoundFormController from "./submit_sound_form_controller"
+application.register("submit-sound-form", SubmitSoundFormController)
