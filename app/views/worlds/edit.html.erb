@@ -1,3 +1,5 @@
-<div class="world-edit-background" style="background-image: url('<%= cl_image_path( @world.image.key ) %>');">
-    
+<div data-controller="add-form" class="world-edit-background" style="background-image: url('<%= cl_image_path( @world.image.key ) %>');">
+    <button class="render-form" data-world-id="<%= params[:id] %>" data-action="click->add-form#renderForm">Add sound</button>
+    <div data-add-form-target="formContainer" id="form-container">
+    </div>
 </div>

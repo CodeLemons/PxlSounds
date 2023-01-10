@@ -1,0 +1,9 @@
+<div data-controller="submit-sound-form" class="edit-sound-form">
+    <%= simple_form_for @sound, url: world_sounds_path, data: { action: "submit->submit-sound-form#submit"} do |f| %>
+            <div data-submit-sound-form-target="fields">
+                <%= f.input :name %>
+                <%= f.input :path %>
+            </div>
+            <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+</div>

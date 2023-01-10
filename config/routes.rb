@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :worlds, only: %i[index show new create edit update] do
     resources :mixes, only: %i[new create edit], path_names: { new: 'play', edit: 'play' }
     resources :mix_sounds, only: %i[new]
+    resources :sounds, only: %i[edit new create update]
   end
 
   resources :mixes, only: %i[destroy update] do
