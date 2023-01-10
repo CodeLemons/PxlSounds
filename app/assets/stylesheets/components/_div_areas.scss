@@ -5,19 +5,19 @@
   position: relative;
 }
 
-.create-div {
-}
-
 .play-container {
   position: relative;
   height: 100vh;
+}
+
+.worlds-container {
+  overflow-y: scroll;
 }
 
 .wrapper {
   display: grid;
   grid-template-columns: 2fr 3fr;
   height: 100%;
-
 }
 
 .image-container {

@@ -31,16 +31,18 @@
         <div class="cards-border"></div>
       </div>
       <% @images = [] %>
-      <% @worlds.each do |world| %>
-        <%= link_to world_path(world) do %>
-          <div class="worlds-container">
-            <div class="world-card" style="background-image: url('<%= cl_image_path( world.image.key )%>');">
-              <% @images.push(image: cl_image_path(world.image.key)) %>
-              <h1><%= world.name %></h1>
+      <div class="worlds-container">
+        <% @worlds.each do |world| %>
+          <%= link_to world_path(world) do %>
+            <div class="world-container">
+              <div class="world-card" style="background-image: url('<%= cl_image_path( world.image.key )%>');">
+                <% @images.push(image: cl_image_path(world.image.key)) %>
+                <h1><%= world.name %></h1>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
     <div class="image-container" style="background-image: url('<%= cl_image_path @worlds.sample.image.key %>')">
       <div class="hidden">
