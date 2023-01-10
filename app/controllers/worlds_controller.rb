@@ -4,15 +4,15 @@ class WorldsController < ApplicationController
   def show
     @world = World.find(params[:id])
   end
-  
+
   def index
     # @mix = Mix.find(params)
     @worlds = World.all
     @mixes = current_user.mixes
   end
-  
+
   def new
-    @world = World.new  
+    @world = World.new
   end
 
   def create
@@ -24,7 +24,7 @@ class WorldsController < ApplicationController
       render "new", status: :unprocessable_entity, notice: "FAILED"
     end
   end
-
+  
   def edit
 
   end
@@ -37,7 +37,7 @@ class WorldsController < ApplicationController
     @world = World.find(params[:world_id])
   end
 
-  private 
+  private
 
   def world_params
     params.require(:world).permit(:name, :description, :image, :bgm)
@@ -46,5 +46,4 @@ class WorldsController < ApplicationController
   def set_world
     @world = World.find(params[:id])
   end
-
 end
