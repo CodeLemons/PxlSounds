@@ -5,6 +5,7 @@
 <%= simple_form_for @world do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
+  <%= f.input :bgm, as: :file  %>
   <%= f.input :image, as: :file  %>
   <%= f.submit %>
 <% end %>
