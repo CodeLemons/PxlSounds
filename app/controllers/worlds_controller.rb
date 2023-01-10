@@ -1,4 +1,6 @@
 class WorldsController < ApplicationController
+  before_action :set_world, only: [:edit]
+
   def show
     @world = World.find(params[:id])
   end
@@ -22,7 +24,15 @@ class WorldsController < ApplicationController
       render "new", status: :unprocessable_entity, notice: "FAILED"
     end
   end
+  
+  def edit
 
+  end
+
+  def update
+    
+  end
+  
   def play
     @world = World.find(params[:world_id])
   end
@@ -30,6 +40,10 @@ class WorldsController < ApplicationController
   private
 
   def world_params
-    params.require(:world).permit(:name, :description, :image)
+    params.require(:world).permit(:name, :description, :image, :bgm)
+  end
+
+  def set_world
+    @world = World.find(params[:id])
   end
 end

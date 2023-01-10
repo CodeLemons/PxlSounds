@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :worlds, only: %i[index show new create] do
+  resources :worlds, only: %i[index show new create edit update] do
     resources :mixes, only: %i[new create edit], path_names: { new: 'play', edit: 'play' }
     resources :mix_sounds, only: %i[new]
   end
