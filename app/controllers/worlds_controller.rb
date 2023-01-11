@@ -19,20 +19,20 @@ class WorldsController < ApplicationController
     @world = World.create(world_params)
 
     if @world.save!
-      redirect_to new_world_path, notice: "SUCCESS"
+      redirect_to edit_world_path(@world), notice: "SUCCESS"
     else
       render "new", status: :unprocessable_entity, notice: "FAILED"
     end
   end
-  
+
   def edit
 
   end
 
   def update
-    
+
   end
-  
+
   def play
     @world = World.find(params[:world_id])
   end
