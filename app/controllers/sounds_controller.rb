@@ -5,16 +5,19 @@ class SoundsController < ApplicationController
     end
 
     def create
+        p params
         @world = World.find(params[:world_id])
-        @sound = Sound.create(sound_params)
+        @sound = Sound.new(sound_params)
+        @sound.world = @world
+
 
         respond_to do |format|
             if @sound.save
                 format.html { redirect_to edit_world_path(@world), notice: "Added sound" }
-                format.json
+                format.json { render json: @sound, status: :created }
             else
                 format.html { render 'new', status: :unprocessable_entity }
-                format.json
+                format.json { render json: @sound.errors, status: :unprocessable_entity }
             end
         end
     end
@@ -22,6 +25,6 @@ class SoundsController < ApplicationController
     private
 
     def sound_params
-        params.require(:sound).permit(:name, :path, :start_x, :start_y, :height, :width, world_id: @world)
+        params.require(:sound).permit(:name, :path, :start_x, :start_y, :height, :width, :audio)
     end
 end
