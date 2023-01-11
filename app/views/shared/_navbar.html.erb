@@ -25,6 +25,7 @@
           <% end %>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <% if user_signed_in? %>
+              <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
               <%= link_to "Logout", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             <% else %>
               <%= link_to "Login", new_user_session_path, class: "dropdown-item" %>
