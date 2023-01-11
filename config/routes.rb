@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     resources :sounds, only: %i[edit new create update]
   end
 
+  resources :users, only: %i[show]
+
   resources :mixes, only: %i[destroy update] do
     resources :mix_sounds, only: %i[create]
   end

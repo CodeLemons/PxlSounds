@@ -10,6 +10,13 @@
   height: 100vh;
 }
 
+.profile-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  text-align: center;
+  align-items: center;
+}
+
 .worlds-container {
   overflow-y: scroll;
   height: 450px;
