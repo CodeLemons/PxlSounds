@@ -112,3 +112,16 @@
   background-color: black;
   width: 100px;
 }
+
+#selection {
+  position: absolute;
+  border: 2px solid yellow;
+  // width: 200px;
+  // height: 200px;
+}
+
+.area {
+  position: absolute;
+  background-color:rgba(211, 211, 211, 0);
+  border: 2px solid yellow;
+}

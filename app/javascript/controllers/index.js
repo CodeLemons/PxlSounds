@@ -28,5 +28,8 @@ application.register("render-icon", RenderIconController)
 import SaveController from "./save_controller"
 application.register("save", SaveController)
 
+import SelectionAreaController from "./selection_area_controller"
+application.register("selection-area", SelectionAreaController)
+
 import SubmitSoundFormController from "./submit_sound_form_controller"
 application.register("submit-sound-form", SubmitSoundFormController)

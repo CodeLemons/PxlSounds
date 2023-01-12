@@ -75,6 +75,11 @@
   resolved "https://registry.npmjs.org/@rails/actioncable/-/actioncable-7.0.4.tgz"
   integrity sha512-tz4oM+Zn9CYsvtyicsa/AwzKZKL+ITHWkhiu7x+xF77clh2b4Rm+s6xnOgY/sGDWoFWZmtKsE95hxBPkgQQNnQ==
 
+"@simonwep/selection-js@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@simonwep/selection-js/-/selection-js-2.1.2.tgz#ec4eae826e4b31a06f77f5c1f3c46b95f3515804"
+  integrity sha512-IEufEqueHuSOR2KfQ/djSRC/6N6J6oca9eosDK2SY1+boe99ZW20kJ7yre43kb+jO9jhouG5adlmVQhbQrnH+g==
+
 "@types/eslint-scope@^3.7.3":
   version "3.7.4"
   resolved "https://registry.npmjs.org/@types/eslint-scope/-/eslint-scope-3.7.4.tgz"

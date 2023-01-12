@@ -1,5 +1,29 @@
-<div data-controller="add-form" class="world-edit-background" style="background-image: url('<%= cl_image_path( @world.image.key ) %>');">
-    <button class="render-form" data-world-id="<%= params[:id] %>" data-action="click->add-form#renderForm">Add sound</button>
-    <div data-add-form-target="formContainer" id="form-container">
+<div data-controller="selection-area">
+    <div class="sound-form">
+        <%= form_for @sound, url: world_sounds_path(world_id: @world) do |f| %>
+                <%= f.text_field :name, data: { selection_area_target: "name" } %>
+
+                <%= f.text_field :path, data: { selection_area_target: "path" } %>
+
+                <%= f.text_field :start_x, data: { selection_area_target: "startx" } %>
+
+                <%= f.text_field :start_y, data: { selection_area_target: "starty" } %>
+
+                <%= f.text_field :height, data: { selection_area_target: "height" } %>
+
+                <%= f.text_field :width, data: { selection_area_target: "width" } %>
+
+                <div style="display: none;" data-selection-area-target="audioForm">
+                    <%= f.label :audio %>
+                    <%= f.file_field :audio %>
+
+                    <%= f.submit "Submit", class: "btn btn-primary", data: { action: "submit->selection-area#addDisplayNone"} %>
+                </div>
+        <% end %>
+    </div>
+    <div class="world-edit-background"
+         data-action="mousedown->selection-area#clickDown mouseup->selection-area#clickUp mousemove->selection-area#clickMove"
+         data-selection-area-target="selectionArea" 
+         style="position: relative; background-image: url('<%= cl_image_path( @world.image.key ) %>');">
     </div>
 </div>

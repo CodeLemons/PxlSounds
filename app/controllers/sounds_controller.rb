@@ -10,6 +10,12 @@ class SoundsController < ApplicationController
     @sound = Sound.new(sound_params)
     @sound.world = @world
 
+    # if @sound.save
+        #     redirect_to edit_world_path(@world), notice: "Added sound"
+        # else
+        #     render 'new', status: :unprocessable_entity
+    # end
+    
     respond_to do |format|
       if @sound.save
         format.html { redirect_to edit_world_path(@world), notice: "Added sound" }
