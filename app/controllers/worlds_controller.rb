@@ -26,7 +26,8 @@ class WorldsController < ApplicationController
   end
 
   def edit
-
+    @world = World.find(params[:id])
+    @sound = Sound.new
   end
 
   def update
