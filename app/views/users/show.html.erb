@@ -29,6 +29,9 @@
             <div class="world-container">
               <div class="world-card" style="background-image: url('<%= cl_image_path( world.image.key )%>');">
                 <h1><%= world.name %></h1>
+                <%= link_to edit_world_path(world) do %>
+                  <i class="fa-solid fa-pen-to-square" id="edit-world"></i>
+                <% end %>
               </div>
             </div>
           <% end %>
