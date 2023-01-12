@@ -4,6 +4,7 @@ import selection from "@simonwep/selection-js"
 let showSelection = false;
 let Xstart;
 let Ystart;
+let counter = 0;
 export default class extends Controller {
   static targets = ["selectionArea",
                     "selection",
@@ -13,7 +14,8 @@ export default class extends Controller {
                     "startx",
                     "starty",
                     "height",
-                    "width"];
+                    "width",
+                    "audio"];
   
 
   clickDown(event) {
@@ -76,15 +78,17 @@ export default class extends Controller {
 
     this.audioFormTarget.style = "";
 
-    this.startxTarget.value = parseFloat(leftValue.replace('px', ''));
-    this.startyTarget.value = parseFloat(topValue.replace('px', ''));
-    this.widthTarget.value = parseFloat(widthValue.replace('px', ''));
-    this.heightTarget.value = parseFloat(heightValue.replace('px', ''));
-
-  }
-
-  addDisplayNone() {
-    this.audioFormTarget.style = "display: none;";
+    counter += 1;
     
+    this.startxTarget.value = (parseFloat(leftValue.replace('px', '')) / this.selectionAreaTarget.offsetWidth ) * 100;
+    this.startyTarget.value = (parseFloat(topValue.replace('px', '')) / this.selectionAreaTarget.offsetHeight ) * 100;
+    this.widthTarget.value = (parseFloat(widthValue.replace('px', '')) / this.selectionAreaTarget.offsetWidth) * 100;
+    this.heightTarget.value = (parseFloat(heightValue.replace('px', '')) / this.selectionAreaTarget.offsetHeight) * 100;
+    this.nameTarget.value = `sound_${counter}`;
+    this.pathTarget.value = `sound_${counter}`;
+  }
+  
+  addDisplayNone(event) {
+    this.audioFormTarget.style = "display: none;";
   }
 }
