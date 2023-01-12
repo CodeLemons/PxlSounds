@@ -21,10 +21,10 @@
                 </div>
         <% end %>
     </div>
-    <div class="world-edit-background"
-         data-action="mousedown->selection-area#clickDown mouseup->selection-area#clickUp mousemove->selection-area#clickMove"
-         data-selection-area-target="selectionArea" 
-         style="position: relative; background-image: url('<%= cl_image_path( @world.image.key ) %>');">
+    <div data-action="mousedown->selection-area#clickDown mouseup->selection-area#clickUp mousemove->selection-area#clickMove"
+         data-selection-area-target="selectionArea"
+         style="position: relative;">
+         <%= cl_image_tag @world.image.key, class: "src-2" %>
          <% @world.sounds.each do |s| %>
             <% if s.nil? %>
                 <div style="display: none;"></div>
