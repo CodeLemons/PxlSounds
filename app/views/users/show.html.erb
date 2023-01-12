@@ -19,6 +19,7 @@
         <%= image_tag "Temp_logo.jpg", class: "profile-avatar" %>
       <% end %>
       <h1><%= @user.username%></h1>
+      <%= link_to "Create world", new_world_path %>
     </div>
     <div class="profile-worlds">
       <h1>My Worlds</h1>
